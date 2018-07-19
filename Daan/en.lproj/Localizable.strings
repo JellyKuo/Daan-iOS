@@ -1,0 +1,111 @@
+/* Absent type generic absent or skip */
+"ABS_ABSENT" = "Absent";
+
+/* Absent type bereavement */
+"ABS_BEREAVEMENT" = "Bereavement";
+
+/* Absent type late */
+"ABS_LATE" = "Late";
+
+/* Absent type official */
+"ABS_OFFICIAL" = "Official";
+
+/* Absent type personal */
+"ABS_PERSONAL" = "Personal";
+
+/* Absent type sick */
+"ABS_SICK" = "Sick";
+
+/* API Error message on title */
+"API_ERROR_TITLE" = "API Error";
+
+/* Authenticate Error */
+"AuthError" = "Authenticate Error";
+
+/* Curriculum cache cleared successful message */
+"CLEAR_CURRICULUM_SUCCESS_MSG" = "Curriculum cache cleared successful";
+
+/* Connection Error message on title */
+"CONN_ERROR_TITLE" = "Internet connection error";
+
+/* Credit represent the point get when passes, text */
+"CREDIT" = "Cr.";
+
+/* Curriculum cache is not downloaded, tap curriculum to cache */
+"CURRICULUM_NOT_CACHED_MSG" = "Tap Curriculum to load cache";
+
+/* 2nd semester text */
+"DOWN_SEMESTER" = "2nd Semester";
+
+/* Failed message on title */
+"FAILED_TITLE" = "Failed";
+
+/* Friday */
+"FRIDAY" = "Friday";
+
+/* Failed */
+"Failed" = "Failed";
+
+/* Unknown grade will use this string */
+"GRADE" = "Grade";
+
+/* 1st grade */
+"GRADE_ONE" = "1st Grade";
+
+/* 3rd grade */
+"GRADE_THREE" = "3rd Grade";
+
+/* 2nd grade */
+"GRADE_TWO" = "2nd Grade";
+
+/* Logout successful message */
+"LOGOUT_SUCCESS_MSG" = "Logout successful";
+
+/* Monday */
+"MONDAY" = "Monday";
+
+/* Next class in curriculum */
+"NEXT_CLASS" = "Next";
+
+/* Notification permission denied message */
+"NOTI_PERM_DENIED_MSG" = "Notification permission was denied. But it's ok, you can always change this in settings";
+
+/* Default action */
+"OK" = "Ok";
+
+/* Ok action on tap */
+"OK_ACT" = "Ok";
+
+/* Password does not match */
+"PwdNotMatch" = "Password does not match";
+
+/* Application reset successful message */
+"RESET_SUCCESS_MSG" = "Application has reset to its origional state";
+
+/* Subject text */
+"SUBJECT" = "Subject";
+
+/* Success message on title */
+"SUCCESS_TITLE" = "Success";
+
+/* Thursday */
+"THRUSDAY" = "Thursday";
+
+/* Tomorrow */
+"TOMORROW" = "Tomorrow";
+
+/* Tuesday */
+"TUESDAY" = "Tuesday";
+
+/* Type text */
+"TYPE" = "Type";
+
+/* Prompts user that update user data is currently broken */
+"UPDATE_USER_DATA_NOT_AVAILABLE_MSG" = "Due to bug on server side, this function is currently disabled until further notice.";
+
+/* 1st semester text */
+"UP_SEMESTER" = "1st Semester";
+
+/* Wednesday */
+"WEDNESDAY" = "Wednesday";
+

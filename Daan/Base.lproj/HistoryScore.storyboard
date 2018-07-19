@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tNm-FB-EWy">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--History Score Table View Controller-->
+        <scene sceneID="4uC-qS-0cL">
+            <objects>
+                <tableViewController id="KbE-vq-Jhb" customClass="HistoryScoreTableViewController" customModule="Daan" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="40" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ODl-nP-1dF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="614"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="HistoryScoreCell" rowHeight="40" id="mSs-0C-1N4" customClass="HistoryScoreTableViewCell" customModule="Daan" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="40"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mSs-0C-1N4" id="7lK-iP-Jgm">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subject" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UFP-dd-A9V">
+                                            <rect key="frame" x="16" y="9" width="58.5" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cr" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SlY-85-Vhu">
+                                            <rect key="frame" x="245.5" y="10" width="39.5" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Az2-Eg-SYO">
+                                            <rect key="frame" x="285" y="10" width="35.5" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EXL-9u-6XP">
+                                            <rect key="frame" x="320.5" y="10" width="38.5" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bux-vx-tJl">
+                                            <rect key="frame" x="207.5" y="9" width="37.5" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="SlY-85-Vhu" firstAttribute="centerY" secondItem="7lK-iP-Jgm" secondAttribute="centerY" id="6El-zZ-pFQ"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="EXL-9u-6XP" secondAttribute="trailing" id="9qw-g1-NGL"/>
+                                        <constraint firstItem="Bux-vx-tJl" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="UFP-dd-A9V" secondAttribute="trailing" constant="10" id="9rY-ea-euA"/>
+                                        <constraint firstAttribute="trailing" secondItem="SlY-85-Vhu" secondAttribute="trailing" constant="90" id="Evf-7g-jIN"/>
+                                        <constraint firstItem="SlY-85-Vhu" firstAttribute="leading" secondItem="Bux-vx-tJl" secondAttribute="trailing" id="GLt-B5-5vv"/>
+                                        <constraint firstItem="Bux-vx-tJl" firstAttribute="centerY" secondItem="7lK-iP-Jgm" secondAttribute="centerY" id="Krg-7y-Z5P"/>
+                                        <constraint firstAttribute="trailing" secondItem="Bux-vx-tJl" secondAttribute="trailing" constant="130" id="ZQT-p1-2AK"/>
+                                        <constraint firstAttribute="trailing" secondItem="Az2-Eg-SYO" secondAttribute="trailing" constant="55" id="ctK-uO-4Dx"/>
+                                        <constraint firstItem="EXL-9u-6XP" firstAttribute="leading" secondItem="Az2-Eg-SYO" secondAttribute="trailing" id="dEN-gG-U2m"/>
+                                        <constraint firstItem="UFP-dd-A9V" firstAttribute="centerY" secondItem="7lK-iP-Jgm" secondAttribute="centerY" id="gyC-lo-oy1"/>
+                                        <constraint firstItem="EXL-9u-6XP" firstAttribute="centerY" secondItem="7lK-iP-Jgm" secondAttribute="centerY" id="plQ-hh-AXh"/>
+                                        <constraint firstItem="Az2-Eg-SYO" firstAttribute="centerY" secondItem="7lK-iP-Jgm" secondAttribute="centerY" id="sEv-Wh-Tpa"/>
+                                        <constraint firstItem="Az2-Eg-SYO" firstAttribute="leading" secondItem="SlY-85-Vhu" secondAttribute="trailing" id="ufi-LF-RO0"/>
+                                        <constraint firstItem="UFP-dd-A9V" firstAttribute="leading" secondItem="7lK-iP-Jgm" secondAttribute="leadingMargin" id="wlX-7X-Sfj"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="creditLab" destination="SlY-85-Vhu" id="axt-Kl-i5x"/>
+                                    <outlet property="downLab" destination="EXL-9u-6XP" id="wlZ-Xu-5PY"/>
+                                    <outlet property="subjectLab" destination="UFP-dd-A9V" id="V0a-xr-yuT"/>
+                                    <outlet property="typeLab" destination="Bux-vx-tJl" id="Df1-Nn-Lpy"/>
+                                    <outlet property="upLab" destination="Az2-Eg-SYO" id="EsI-0H-tYK"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="KbE-vq-Jhb" id="CFY-2h-coi"/>
+                            <outlet property="delegate" destination="KbE-vq-Jhb" id="gac-Zv-flN"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aB0-oG-y5R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1365.5999999999999" y="-750.22488755622192"/>
+        </scene>
+        <!--History Score-->
+        <scene sceneID="nvF-aE-spb">
+            <objects>
+                <viewController id="tNm-FB-EWy" customClass="HistoryScoreViewController" customModule="Daan" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="K6E-LH-XTR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nkO-eB-M5u">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="614"/>
+                                <connections>
+                                    <segue destination="KbE-vq-Jhb" kind="embed" identifier="HistoryContainerSegue" id="aNq-3h-wgo"/>
+                                </connections>
+                            </containerView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Vuz-66-kWv">
+                                <rect key="frame" x="129" y="629" width="117.5" height="23"/>
+                                <subviews>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aTQ-pS-Mir">
+                                        <rect key="frame" x="0.0" y="0.0" width="23" height="23"/>
+                                        <state key="normal" image="BackwardNavArrow"/>
+                                        <connections>
+                                            <action selector="ChangeGradeTap:" destination="tNm-FB-EWy" eventType="touchUpInside" id="cyh-MZ-fzT"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Grade" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TX9-xA-20X">
+                                        <rect key="frame" x="33" y="0.0" width="51.5" height="23"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GeZ-R5-tSZ">
+                                        <rect key="frame" x="94.5" y="0.0" width="23" height="23"/>
+                                        <state key="normal" image="ForwardNavArrow"/>
+                                        <connections>
+                                            <action selector="ChangeGradeTap:" destination="tNm-FB-EWy" eventType="touchUpInside" id="pKr-Td-q07"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Vuz-66-kWv" firstAttribute="top" secondItem="nkO-eB-M5u" secondAttribute="bottom" constant="15" id="Eb2-dM-G5p"/>
+                            <constraint firstItem="Vuz-66-kWv" firstAttribute="centerX" secondItem="K6E-LH-XTR" secondAttribute="centerX" id="Kxh-lu-8IB"/>
+                            <constraint firstItem="RyM-BX-CYh" firstAttribute="bottom" secondItem="Vuz-66-kWv" secondAttribute="bottom" constant="15" id="mg0-C0-LO1"/>
+                            <constraint firstItem="RyM-BX-CYh" firstAttribute="trailing" secondItem="nkO-eB-M5u" secondAttribute="trailing" id="nSt-W1-u2N"/>
+                            <constraint firstItem="nkO-eB-M5u" firstAttribute="leading" secondItem="RyM-BX-CYh" secondAttribute="leading" id="udh-og-Umt"/>
+                            <constraint firstItem="nkO-eB-M5u" firstAttribute="top" secondItem="K6E-LH-XTR" secondAttribute="top" id="y89-Rc-jfx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="RyM-BX-CYh"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="History Score" id="PdR-jI-Ai6"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="gradeLab" destination="TX9-xA-20X" id="sVh-jk-5Ri"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HFp-xi-jSy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="545" y="-749"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="BackwardNavArrow" width="23" height="23"/>
+        <image name="ForwardNavArrow" width="23" height="23"/>
+    </resources>
+</document>

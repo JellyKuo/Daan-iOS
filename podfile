@@ -1,0 +1,26 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '9.0'
+
+source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
+
+target 'Daan' do
+  pod 'Alamofire'
+  pod 'ObjectMapper'
+  pod 'KeychainSwift'
+
+  pod 'Firebase/Core'
+  pod 'Firebase/Messaging'
+  pod 'Fabric'
+  pod 'Crashlytics'
+
+  # Pods for Daan
+
+end
+
+target 'Today Curriculum' do
+  pod 'ObjectMapper'
+
+  # Pods for Today Curriculum
+
+end

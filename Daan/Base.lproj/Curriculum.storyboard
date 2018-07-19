@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rub-Vp-Qf8">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13771"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Weekday-->
+        <scene sceneID="0qe-03-agT">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="rub-Vp-Qf8" customClass="CurriculumPageViewController" customModule="Daan" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="Weekday" id="HMZ-J5-zrW"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="weekNavItem" destination="HMZ-J5-zrW" id="Tz6-oU-aVe"/>
+                    </connections>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MEf-Pc-ghq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1204" y="-69"/>
+        </scene>
+        <!--Curriculum Table View Controller-->
+        <scene sceneID="qQk-ZA-EEF">
+            <objects>
+                <tableViewController storyboardIdentifier="CurriculumTableView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Uw0-i6-Ils" customClass="CurriculumTableViewController" customModule="Daan" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="HWo-mn-f1W">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CurriculumCell" rowHeight="70" id="F7l-cb-JiI" customClass="CurriculumTableViewCell" customModule="Daan" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="70"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="F7l-cb-JiI" id="tOR-B4-arX">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6IH-ZY-Pt5">
+                                            <rect key="frame" x="16" y="11" width="40" height="19.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="GGI-i1-qXa"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GSO-RI-QNV">
+                                            <rect key="frame" x="16" y="39.5" width="40" height="19.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="FPa-OZ-6Nz"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subject" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w6m-hs-aFg">
+                                            <rect key="frame" x="66" y="11" width="141" height="26.5"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Teacher" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CFh-Ft-PNH">
+                                            <rect key="frame" x="307" y="42" width="52" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="GSO-RI-QNV" firstAttribute="bottom" secondItem="tOR-B4-arX" secondAttribute="bottomMargin" id="4SX-p2-tU4"/>
+                                        <constraint firstItem="w6m-hs-aFg" firstAttribute="leading" secondItem="GSO-RI-QNV" secondAttribute="trailing" constant="10" id="99i-49-DsK"/>
+                                        <constraint firstItem="CFh-Ft-PNH" firstAttribute="leading" relation="lessThanOrEqual" secondItem="w6m-hs-aFg" secondAttribute="trailing" priority="750" constant="100" id="Be1-Cg-r94"/>
+                                        <constraint firstItem="GSO-RI-QNV" firstAttribute="leading" secondItem="tOR-B4-arX" secondAttribute="leadingMargin" id="LgM-Z9-Qjs"/>
+                                        <constraint firstItem="6IH-ZY-Pt5" firstAttribute="top" secondItem="tOR-B4-arX" secondAttribute="topMargin" id="acd-1D-gop"/>
+                                        <constraint firstItem="w6m-hs-aFg" firstAttribute="top" secondItem="tOR-B4-arX" secondAttribute="topMargin" id="ao6-eV-zwn"/>
+                                        <constraint firstItem="CFh-Ft-PNH" firstAttribute="bottom" secondItem="tOR-B4-arX" secondAttribute="bottomMargin" id="bap-FM-sn2"/>
+                                        <constraint firstItem="6IH-ZY-Pt5" firstAttribute="leading" secondItem="tOR-B4-arX" secondAttribute="leadingMargin" id="qbs-Ab-yUg"/>
+                                        <constraint firstItem="CFh-Ft-PNH" firstAttribute="trailing" secondItem="tOR-B4-arX" secondAttribute="trailingMargin" id="w6z-GM-6dj"/>
+                                        <constraint firstItem="w6m-hs-aFg" firstAttribute="leading" secondItem="6IH-ZY-Pt5" secondAttribute="trailing" constant="10" id="x8C-xQ-a8A"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="endLab" destination="GSO-RI-QNV" id="5sh-1z-uP9"/>
+                                    <outlet property="startLab" destination="6IH-ZY-Pt5" id="53N-w3-9U9"/>
+                                    <outlet property="subjectLab" destination="w6m-hs-aFg" id="6PZ-qH-3El"/>
+                                    <outlet property="teacherLab" destination="CFh-Ft-PNH" id="fIs-pK-S47"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Uw0-i6-Ils" id="6ae-27-wCz"/>
+                            <outlet property="delegate" destination="Uw0-i6-Ils" id="gDH-gD-mMQ"/>
+                        </connections>
+                    </tableView>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hNd-sf-90F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1920.8" y="-70.614692653673174"/>
+        </scene>
+    </scenes>
+</document>

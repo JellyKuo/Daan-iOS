@@ -1,0 +1,6 @@
+framework module Pods_Today_Curriculum {
+  umbrella header "Pods-Today Curriculum-umbrella.h"
+
+  export *
+  module * { export * }
+}
