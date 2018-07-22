@@ -73,14 +73,6 @@
                                     <segue destination="niR-O0-2rk" kind="embed" identifier="EmbedTableViewSegue" id="Jhn-oA-M23"/>
                                 </connections>
                             </containerView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NYb-me-EaA">
-                                <rect key="frame" x="20" y="119" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="JHP-Lx-Fmo" kind="show" id="aGq-Fm-WSw"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -316,14 +308,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="reF-Gb-Qbo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1388" y="-21"/>
-        </scene>
-        <!--Debug-->
-        <scene sceneID="hpi-YX-LNc">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Debug" id="JHP-Lx-Fmo" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mR0-9l-Zox" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-53" y="-228"/>
         </scene>
         <!--Settings-->
         <scene sceneID="OiY-g0-cbu">
