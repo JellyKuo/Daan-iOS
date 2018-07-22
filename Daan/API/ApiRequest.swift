@@ -24,7 +24,7 @@ class ApiRequest2 {
         var urlComponent = URLComponents()
         urlComponent.scheme = "https"
         urlComponent.host = apiUrl
-        urlComponent.path = "/v1" + path  //FIX ON PROD
+        urlComponent.path = "/v1" + path  // FIXME: Change plist once ApiRequest upgrade
         guard let url = urlComponent.url else{fatalError("Cannot generate url fron configured urlComponent")}
         
         request = URLRequest(url: url)
@@ -102,7 +102,7 @@ class ApiRequest{
     }
     
     func request(result : @escaping (JSONDictionary?,ApiError?,Error?) -> Void) {
-        print("Running ApiRequest towards url: \(self.requestUrl)")
+        print("[OBSOLETE] Running ApiRequest towards url: \(self.requestUrl)")
         let headers:HTTPHeaders?
         if let tk = token{
             headers = ["Authorization":tk.token]
@@ -122,51 +122,51 @@ class ApiRequest{
                     }
                     else{
                         let apiError = ApiError(JSON: value)
-                        print("Api reported error!\n  Code: \(apiError?.code ?? -1)\n  Error:\(apiError?.error ?? "")")
+                        print("[OBSOLETE] Api reported error!\n  Code: \(apiError?.code ?? -1)\n  Error:\(apiError?.error ?? "")")
                         
                         //Auto reobtain token
                         //This entire api part needs to be rewritten
                         if apiError?.code == 103 || apiError?.error == "token過期"{
                             let keychain = KeychainSwift()
                             guard let account = keychain.get("account"),let password = keychain.get("password") else{
-                                print("Got token expired but was unable to find login in keychain, returning err")
+                                print("[OBSOLETE] Got token expired but was unable to find login in keychain, returning err")
                                 //Returns the failed apierr without processing
                                 result(nil,apiError,nil)
                                 return
                             }
                             //Try to login and obtain token
-                            print("Token is expired, attempting to get a new one")
+                            print("[OBSOLETE] Token is expired, attempting to get a new one")
                             let loginReq = ApiRequest(path: "actmanage/login", method: .post, params: ["account":account,"password":password])
                             loginReq.request {(loginRes,loginApiErr,loginAlaErr) in
                                 if let loginResult = loginRes {
                                     //Got new token
                                     let token = Token(JSON: loginResult)
-                                    print("Got new token by ApiRequest, \(token?.token ?? "nil")")
-                                    print("Performing original request")
+                                    print("[OBSOLETE] Got new token by ApiRequest, \(token?.token ?? "nil")")
+                                    print("[OBSOLETE] Performing original request")
                                     let origReq = ApiRequest(path: self.requestUrl, method: self.method, token: token, params: self.params)
                                     origReq.request {(origRes,origApiErr,origAlaErr) in
                                         if let origResult = origRes{
-                                            print("Original request successed, passing that back")
+                                            print("[OBSOLETE] Original request successed, passing that back")
                                             result(origResult,nil,nil)
                                         }
                                         else if let origApiErr = origApiErr{
-                                            print("Original request throw an api err, passing that back")
+                                            print("[OBSOLETE] Original request throw an api err, passing that back")
                                             result(nil,origApiErr,nil)
                                         }
                                         else if let origAlaError = origAlaErr{
-                                            print("Original request throw an alamofire err, passing that back")
+                                            print("[OBSOLETE] Original request throw an alamofire err, passing that back")
                                             result(nil,nil,origAlaError)
                                         }
                                     }
                                 }
                                 else if let loginApiError = loginApiErr{
                                     //ApiErr during login process
-                                    print("Token refresh throw api err, passing that back")
+                                    print("[OBSOLETE] Token refresh throw api err, passing that back")
                                     result(nil,loginApiError,nil)
                                 }
                                 else if let loginAlaError = loginAlaErr{
                                     //Alamofire error during login process
-                                    print("Token refresh throw alamofire err, passing that back")
+                                    print("[OBSOLETE] Token refresh throw alamofire err, passing that back")
                                     result(nil,nil,loginAlaError)
                                 }
                             }
@@ -177,7 +177,7 @@ class ApiRequest{
                     }
                     
                 case .failure(let error):
-                    print("Alamofire Error\n  \(error)")
+                    print("[OBSOLETE] Alamofire Error\n  \(error)")
                     result(nil,nil,error)
                 }
         }
@@ -186,7 +186,7 @@ class ApiRequest{
     //TODO: Create a better implementation when data is sent as array
     
     func requestArr(result : @escaping (JSONArray?,ApiError?,Error?) -> Void) {
-        print("Running ARRAY ApiRequest towards url: \(self.requestUrl)")
+        print("[OBSOLETE] Running ARRAY ApiRequest towards url: \(self.requestUrl)")
         let headers:HTTPHeaders?
         if let tk = token{
             headers = ["Authorization":tk.token]
@@ -202,51 +202,51 @@ class ApiRequest{
                 case .success(let val):
                     if let value = val as? JSONDictionary{
                         let apiError = ApiError(JSON: value)
-                        print("(Array) Api reported error!\n  Code: \(apiError?.code ?? -1)\n  Error:\(apiError?.error ?? "")")
+                        print("[OBSOLETE] (Array) Api reported error!\n  Code: \(apiError?.code ?? -1)\n  Error:\(apiError?.error ?? "")")
                         
                         //Auto reobtain token
                         //This entire api part needs to be rewritten
                         if apiError?.code == 103 || apiError?.error == "token過期"{
                             let keychain = KeychainSwift()
                             guard let account = keychain.get("account"),let password = keychain.get("password") else{
-                                print("Got token expired but was unable to find login in keychain, returning err")
+                                print("[OBSOLETE] Got token expired but was unable to find login in keychain, returning err")
                                 //Returns the failed apierr without processing
                                 result(nil,apiError,nil)
                                 return
                             }
                             //Try to login and obtain token
-                            print("Token is expired, attempting to get a new one")
+                            print("[OBSOLETE] Token is expired, attempting to get a new one")
                             let loginReq = ApiRequest(path: "actmanage/login", method: .post, params: ["account":account,"password":password])
                             loginReq.request {(loginRes,loginApiErr,loginAlaErr) in
                                 if let loginResult = loginRes {
                                     //Got new token
                                     let token = Token(JSON: loginResult)
-                                    print("Got new token by ApiRequest, \(token?.token ?? "nil")")
-                                    print("Performing original request")
+                                    print("[OBSOLETE] Got new token by ApiRequest, \(token?.token ?? "nil")")
+                                    print("[OBSOLETE] Performing original request")
                                     let origReq = ApiRequest(path: self.requestUrl, method: self.method, token: token, params: self.params)
                                     origReq.requestArr {(origRes,origApiErr,origAlaErr) in
                                         if let origResult = origRes{
-                                            print("Original request successed, passing that back")
+                                            print("[OBSOLETE] Original request successed, passing that back")
                                             result(origResult,nil,nil)
                                         }
                                         else if let origApiErr = origApiErr{
-                                            print("Original request throw an api err, passing that back")
+                                            print("[OBSOLETE] Original request throw an api err, passing that back")
                                             result(nil,origApiErr,nil)
                                         }
                                         else if let origAlaError = origAlaErr{
-                                            print("Original request throw an alamofire err, passing that back")
+                                            print("[OBSOLETE] Original request throw an alamofire err, passing that back")
                                             result(nil,nil,origAlaError)
                                         }
                                     }
                                 }
                                 else if let loginApiError = loginApiErr{
                                     //ApiErr during login process
-                                    print("Token refresh throw api err, passing that back")
+                                    print("[OBSOLETE] Token refresh throw api err, passing that back")
                                     result(nil,loginApiError,nil)
                                 }
                                 else if let loginAlaError = loginAlaErr{
                                     //Alamofire error during login process
-                                    print("Token refresh throw alamofire err, passing that back")
+                                    print("[OBSOLETE] Token refresh throw alamofire err, passing that back")
                                     result(nil,nil,loginAlaError)
                                 }
                             }
@@ -260,7 +260,7 @@ class ApiRequest{
                         result(value,nil,nil)
                     }
                 case .failure(let error):
-                    print("Alamofire Error (ARRAY)\n  \(error)")
+                    print("[OBSOLETE] Alamofire Error (ARRAY)\n  \(error)")
                     result(nil,nil,error)
                 }
         }
