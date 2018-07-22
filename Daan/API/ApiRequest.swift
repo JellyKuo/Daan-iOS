@@ -62,7 +62,7 @@ class ApiRequest2 {
                 completion(.failure(error))
             }
         }
-        print("API Request to \(String(describing: request.url))")
+        print("API Request to \(request.url?.absoluteString ?? "nil")")
         task.resume()
     }
 }

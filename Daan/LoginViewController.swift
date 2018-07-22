@@ -66,6 +66,9 @@ class LoginViewController: UIViewController {
                 self.present(alert, animated: true, completion: nil)
             }
         })
+        
+        // Delete on production
+        // Legacy API code
         /*
         let req = ApiRequest(path: "actmanage/login", method: .post, params: ["account":account,"password":password])
         req.request {(res,apierr,alaerr) in
