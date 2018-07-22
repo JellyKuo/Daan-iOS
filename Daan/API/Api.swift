@@ -20,8 +20,8 @@ class Api{
         case .success(let data):
             let decoder = JSONDecoder()
             do{
-                let token = try decoder.decode(T.self, from: data)
-                completion(.success(token))
+                let value = try decoder.decode(T.self, from: data)
+                completion(.success(value))
             }
             catch{
                 // Try to parse to see if its an ApiError

@@ -21,11 +21,10 @@ class ApiRequest2 {
     init(_ path:String,method:String) {
         let apiConfig = NSDictionary(contentsOfFile:Bundle.main.path(forResource: "ApiConfig", ofType: "plist")!)
         let apiUrl = apiConfig?.object(forKey: "ApiUrl") as! String
-        
         var urlComponent = URLComponents()
         urlComponent.scheme = "https"
         urlComponent.host = apiUrl
-        urlComponent.path = path
+        urlComponent.path = "/v1" + path  //FIX ON PROD
         guard let url = urlComponent.url else{fatalError("Cannot generate url fron configured urlComponent")}
         
         request = URLRequest(url: url)
@@ -63,6 +62,7 @@ class ApiRequest2 {
                 completion(.failure(error))
             }
         }
+        print("API Request to \(String(describing: request.url))")
         task.resume()
     }
 }

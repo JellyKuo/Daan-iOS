@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zmd-iR-5CI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zmd-iR-5CI">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -178,7 +178,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="Login:" destination="4te-Vq-17y" eventType="touchUpInside" id="6Zq-bP-4ew"/>
+                                    <action selector="loginTap:" destination="4te-Vq-17y" eventType="touchUpInside" id="20h-Sj-Qdm"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -534,6 +534,6 @@
         <image name="DownArrow" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="arK-El-PaW"/>
+        <segue reference="vP2-FJ-AKa"/>
     </inferredMetricsTieBreakers>
 </document>

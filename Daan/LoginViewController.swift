@@ -35,9 +35,38 @@ class LoginViewController: UIViewController {
     }
     
     
-    @IBAction func Login(_ sender: Any) {
+    @IBAction func loginTap(_ sender: Any) {
         let account = EmailTxt.text!
         let password = PasswordTxt.text!
+        let login = Login(account: account, password: password)
+        
+        // Testing experimental API call, refactor in future
+        Api().login(login, completion: {result in
+            switch result{
+            case .success(let token):
+                self.token = token
+                print("Got result:\(result)")
+                let keychain = KeychainSwift()
+                keychain.set(account, forKey: "account")
+                keychain.set(password, forKey: "password")
+                print("Keychain value set")
+                print("Calling performSegue ID:MainSegue")
+                self.performSegue(withIdentifier: "MainSegue", sender: self)
+            case .apiError(let apiError):
+                let alert = UIAlertController(title: NSLocalizedString("API_ERROR_TITLE", comment:"API Error message on title"), message: apiError.error, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: NSLocalizedString("OK_ACT", comment:"Ok action on tap"), style: .`default`, handler: { _ in
+                    print("Api Error alert occured")
+                }))
+                self.present(alert, animated: true, completion: nil)
+            case .networkError(let netError):
+                let alert = UIAlertController(title: NSLocalizedString("CONN_ERROR_TITLE", comment:"Connection Error message on title"), message: netError.localizedDescription, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: NSLocalizedString("OK_ACT", comment:"Ok action on tap"), style: .`default`, handler: { _ in
+                    print("Alamofire Error alert occured")
+                }))
+                self.present(alert, animated: true, completion: nil)
+            }
+        })
+        /*
         let req = ApiRequest(path: "actmanage/login", method: .post, params: ["account":account,"password":password])
         req.request {(res,apierr,alaerr) in
             if let result = res {
@@ -65,6 +94,7 @@ class LoginViewController: UIViewController {
                 self.present(alert, animated: true, completion: nil)
             }
         }
+        */
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
