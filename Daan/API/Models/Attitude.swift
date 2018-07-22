@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-struct Attitude: Mappable {
+struct Attitude: Codable,Mappable {
     var date: String?
     var item: String?
     var text: String?
@@ -25,7 +25,7 @@ struct Attitude: Mappable {
     }
 }
 
-struct AttitudeStatus: Mappable {
+struct AttitudeStatus: Codable,Mappable {
     var status: [Attitude]?
     var count: AttitudeCount?
     
@@ -39,7 +39,7 @@ struct AttitudeStatus: Mappable {
     }
 }
 
-struct AttitudeCount: Mappable {
+struct AttitudeCount: Codable,Mappable {
     var smallcite: Int?
     var smallfault: Int?
     var middlecite: Int?

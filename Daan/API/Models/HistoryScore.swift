@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-struct HistoryScore: Mappable {
+struct HistoryScore: Codable,Mappable {
     var subject: String?
     var type: String?
     var credit: String?

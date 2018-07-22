@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-struct SectionalScore: Mappable {
+struct SectionalScore: Codable,Mappable {
     var subject: String?
     var first_section: Int?
     var second_section: Int?

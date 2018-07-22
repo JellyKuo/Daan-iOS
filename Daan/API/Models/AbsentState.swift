@@ -9,10 +9,16 @@
 import Foundation
 import ObjectMapper
 
-struct AbsentState: Mappable {
+struct AbsentState: Codable,Mappable {
     var date: String?
     var type: String?
     var cls: String?  //class
+    
+    enum CodingKeys:String,CodingKey{
+        case date
+        case type
+        case cls = "class"
+    }
     
     init?(map: Map) {
         

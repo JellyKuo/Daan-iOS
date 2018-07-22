@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-struct Curriculum: Mappable {
+struct Curriculum: Codable,Mappable {
     var start: String?
     var end: String?
     var subject: String?
@@ -27,7 +27,7 @@ struct Curriculum: Mappable {
     }
 }
 
-struct CurriculumWeek: Mappable {
+struct CurriculumWeek: Codable,Mappable {
     var week1: [Curriculum]?
     var week2: [Curriculum]?
     var week3: [Curriculum]?

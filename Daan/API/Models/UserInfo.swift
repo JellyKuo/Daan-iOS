@@ -9,11 +9,18 @@
 import Foundation
 import ObjectMapper
 
-struct UserInfo: Mappable {
+struct UserInfo: Codable,Mappable {
     var name: String?
     var nick: String?
     var cls: String?  //class
     var group: String?
+    
+    enum CodingKeys:String,CodingKey{
+        case name
+        case nick
+        case cls = "class"
+        case group
+    }
     
     init?(map: Map) {
         
