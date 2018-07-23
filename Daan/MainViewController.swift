@@ -81,30 +81,30 @@ class MainViewController: UIViewController,displayNameDelegate {
         
         // Legacy API Code
         /*
-        let req = ApiRequest(path: "actmanage/getUserInfo", method: .get, token: self.token)
-        req.request {(res,apierr,alaerr) in
-            if let result = res {
-                self.userInfo = UserInfo(JSON: result)
-                self.userDefaults.set(self.userInfo?.name, forKey: "name")
-                self.userDefaults.set(self.userInfo?.nick, forKey: "nickname")
-                self.displaySwitched()
-            }
-            else if let apiError = apierr{
-                let alert = UIAlertController(title: NSLocalizedString("API_ERROR_TITLE", comment:"API Error message on title"), message: apiError.error, preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: NSLocalizedString("OK_ACT", comment:"Ok action on tap"), style: .`default`, handler: { _ in
-                    print("Api Error alert occured")
-                }))
-                self.present(alert, animated: true, completion: nil)
-            }
-            else if let alamoError = alaerr{
-                let alert = UIAlertController(title: NSLocalizedString("CONN_ERROR_TITLE", comment:"Connection Error message on title"), message: alamoError.localizedDescription, preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: NSLocalizedString("OK_ACT", comment:"Ok action on tap"), style: .`default`, handler: { _ in
-                    print("Alamofire Error alert occured")
-                }))
-                self.present(alert, animated: true, completion: nil)
-            }
-        }
- */
+         let req = ApiRequest(path: "actmanage/getUserInfo", method: .get, token: self.token)
+         req.request {(res,apierr,alaerr) in
+         if let result = res {
+         self.userInfo = UserInfo(JSON: result)
+         self.userDefaults.set(self.userInfo?.name, forKey: "name")
+         self.userDefaults.set(self.userInfo?.nick, forKey: "nickname")
+         self.displaySwitched()
+         }
+         else if let apiError = apierr{
+         let alert = UIAlertController(title: NSLocalizedString("API_ERROR_TITLE", comment:"API Error message on title"), message: apiError.error, preferredStyle: .alert)
+         alert.addAction(UIAlertAction(title: NSLocalizedString("OK_ACT", comment:"Ok action on tap"), style: .`default`, handler: { _ in
+         print("Api Error alert occured")
+         }))
+         self.present(alert, animated: true, completion: nil)
+         }
+         else if let alamoError = alaerr{
+         let alert = UIAlertController(title: NSLocalizedString("CONN_ERROR_TITLE", comment:"Connection Error message on title"), message: alamoError.localizedDescription, preferredStyle: .alert)
+         alert.addAction(UIAlertAction(title: NSLocalizedString("OK_ACT", comment:"Ok action on tap"), style: .`default`, handler: { _ in
+         print("Alamofire Error alert occured")
+         }))
+         self.present(alert, animated: true, completion: nil)
+         }
+         }
+         */
     }
     
     func autoLogin(){
@@ -266,7 +266,7 @@ class MainViewController: UIViewController,displayNameDelegate {
         if userDefaults.bool(forKey: "displayNickname") {
             print("Display nickname is true in userDefaults, using nick")
             if let nick = userDefaults.string(forKey: "nickname"){
-                if self.nameLab != nil{
+                DispatchQueue.main.async {
                     self.nameLab.text = nick
                 }
             }
@@ -274,11 +274,10 @@ class MainViewController: UIViewController,displayNameDelegate {
         else{
             print("Display nickname is false or not set in userDefaults, using full name")
             if let name = userDefaults.string(forKey: "name"){
-                if self.nameLab != nil{
+                DispatchQueue.main.async {
                     self.nameLab.text = name
                 }
             }
-            
         }
     }
     
