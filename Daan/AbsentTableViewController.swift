@@ -151,6 +151,60 @@ class AbsentTableViewController: UITableViewController {
      */
     
     func GetData() {
+        // TODO: Refactor this API call
+        guard let token = self.token else{
+            fatalError("Toke is nil")
+        }
+        Api().getAbsent(token) { result in
+            switch result{
+                case .success(let absent):
+                    self.absentState = absent
+                    for state in self.absentState!{
+                        switch state.type!{
+                        case "遲":
+                            self.count[0] += 1
+                            break
+                        case "病":
+                            self.count[1] += 1
+                            break
+                        case "事":
+                            self.count[2] += 1
+                            break
+                        case "公":
+                            self.count[3] += 1
+                            break
+                        case "缺":
+                            self.count[4] += 1
+                            break
+                        case "曠":
+                            self.count[4] += 1
+                            break
+                        case "喪":
+                            self.count[5] += 1
+                            break
+                        default:
+                            print("I cant find \(state.type!) in the list, not counting")
+                            break;
+                        }
+                    }
+                    self.tableView.reloadData()
+                    self.activityInd.stopAnimating()
+            case .apiError(let apiError):
+                let alert = UIAlertController(title: NSLocalizedString("API_ERROR_TITLE", comment:"API Error message on title"), message: apiError.error, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: NSLocalizedString("OK_ACT", comment:"Ok action on tap"), style: .`default`, handler: { _ in
+                    print("Api Error alert occured")
+                }))
+                self.present(alert, animated: true, completion: nil)
+            case .networkError(let netError):
+                let alert = UIAlertController(title: NSLocalizedString("CONN_ERROR_TITLE", comment:"Connection Error message on title"), message: netError.localizedDescription, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: NSLocalizedString("OK_ACT", comment:"Ok action on tap"), style: .`default`, handler: { _ in
+                    print("Alamofire Error alert occured")
+                }))
+                self.present(alert, animated: true, completion: nil)
+            }
+         }
+
+        /*
         let req = ApiRequest(path: "absentstate", method: .get, token: self.token)
         req.requestArr {(res,apierr,alaerr) in
             if let result = res {
@@ -201,6 +255,7 @@ class AbsentTableViewController: UITableViewController {
                 self.present(alert, animated: true, completion: nil)
             }
         }
+        */
     }
     
     /*
