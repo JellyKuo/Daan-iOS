@@ -44,7 +44,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
             break
         case .Debug:
-            print("Debug, Crashlytics not initialized")
+            print("Debug, Initialize Crashlytics")
+            Fabric.with([Crashlytics.self])
             break
         case .TestFlight:
             print("TF, Crashlytics initialized")
