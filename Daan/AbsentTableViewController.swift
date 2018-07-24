@@ -187,8 +187,10 @@ class AbsentTableViewController: UITableViewController {
                             break;
                         }
                     }
-                    self.tableView.reloadData()
-                    self.activityInd.stopAnimating()
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                        self.activityInd.stopAnimating()
+                    }
             case .apiError(let apiError):
                 let alert = UIAlertController(title: NSLocalizedString("API_ERROR_TITLE", comment:"API Error message on title"), message: apiError.error, preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: NSLocalizedString("OK_ACT", comment:"Ok action on tap"), style: .`default`, handler: { _ in
