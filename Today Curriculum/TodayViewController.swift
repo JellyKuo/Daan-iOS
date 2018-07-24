@@ -45,6 +45,26 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             fatalError("Cannot init UserDefaults with suiteName group.com.Jelly.Daan")
         }
         if let JSON = userDefaults.string(forKey: "curriculumJSON"), JSON != "" {
+            let decoder = JSONDecoder()
+            do{
+                let curr = try decoder.decode(CurriculumWeek.self, from: JSON.data(using: .utf8)!)
+                print("Got curriculum from UsersDefault, using that")
+                if #available(iOSApplicationExtension 10.0, *) {
+                    self.curriculum = curr
+                    if(self.extensionContext?.widgetActiveDisplayMode == .expanded){
+                        generateFullUI(currWeek: curr)
+                    }
+                    else{
+                        generateCompactUI(currWeek: curr)
+                    }
+                } else {
+                    generateFullUI(currWeek: curr)
+                }
+            }
+            catch{
+                print("JSON cannot be decoded to object, Grabbing from Api")
+            }
+            /*
             if let curr = CurriculumWeek(JSONString: JSON){
                 print("Got curriculum JSON from UserDefaults and mapped to object")
                 if #available(iOSApplicationExtension 10.0, *) {
@@ -58,6 +78,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
                 } else {
                     generateFullUI(currWeek: curr)
                 }
+ 
             }
             else{
                 print("Got curriculum JSON but cannot map it to object")
@@ -65,6 +86,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
                 completionHandler(NCUpdateResult.noData)
                 return
             }
+            */
         }
         else {
             print("Got userDefaults but JSON doesn't exist")
