@@ -106,11 +106,12 @@ class UpdatedDataViewController: UIViewController {
     }
     
     @IBAction func UpdateTap() {
+        /*
         let email = emailTxt.text!
         let nick = nickTxt.text!
         let newPwd = newPwTxt.text!
         let schoolPwd = schoolPwdTxt.text!
-        /*
+        
         let req = ApiRequest(path: "actmanage/updateinfo", method: .put, params: ["password":oldPwd!,"new_school_pwd":schoolPwd,"new_nick":nick,"new_password":newPwd,"new_email":email])
         req.request {(res,apierr,alaerr) in
             if let result = res {

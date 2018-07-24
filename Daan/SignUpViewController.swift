@@ -88,6 +88,32 @@ class SecondSignUpViewController: UIViewController {
     }
     
     @IBAction func RegisterTouch(_ sender: Any) {
+        let register = Register(email: Email, password: Password, user_group: "student", school_account: SchoolAcc.text!, school_pwd: SchoolPass.text!, nick: Nickname)
+        Api().register(register) { (result) in
+            switch result{
+            case .success(let token):
+                self.token = token
+                print("Got token:\(token)")
+                let keychain = KeychainSwift()
+                keychain.set(self.Email, forKey: "account")
+                keychain.set(self.Password, forKey: "password")
+                print("Keychain set")
+                print("Calling performSegue ID:MainSegue")
+                self.performSegue(withIdentifier: "MainSegue", sender: self)
+            case .apiError(let apiError):
+                let alert = UIAlertController(title: NSLocalizedString("API_ERROR_TITLE", comment:"API Error message on title"), message: apiError.error, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: NSLocalizedString("OK_ACT", comment:"Ok action on tap"), style: .`default`, handler: { _ in
+                    print("Api Error alert occured")
+                }))
+                self.present(alert, animated: true, completion: nil)
+            case .networkError(let netError):
+                let alert = UIAlertController(title: NSLocalizedString("CONN_ERROR_TITLE", comment:"Connection Error message on title"), message: netError.localizedDescription, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: NSLocalizedString("OK_ACT", comment:"Ok action on tap"), style: .`default`, handler: { _ in
+                    print("Alamofire Error alert occured")
+                }))
+                self.present(alert, animated: true, completion: nil)
+            }
+        }
         /*
         var reg:Register = Register(JSON: [:])!
         reg.email=Email!
