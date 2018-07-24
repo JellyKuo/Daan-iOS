@@ -66,38 +66,6 @@ class LoginViewController: UIViewController {
                 self.present(alert, animated: true, completion: nil)
             }
         })
-        
-        // Delete on production
-        // Legacy API code
-        /*
-        let req = ApiRequest(path: "actmanage/login", method: .post, params: ["account":account,"password":password])
-        req.request {(res,apierr,alaerr) in
-            if let result = res {
-                self.token = Token(JSON: result)
-                print("Got result:\(result)")
-                let keychain = KeychainSwift()
-                keychain.set(account, forKey: "account")
-                keychain.set(password, forKey: "password")
-                print("Keychain value set")
-                print("Calling performSegue ID:MainSegue")
-                self.performSegue(withIdentifier: "MainSegue", sender: self)
-            }
-            else if let apiError = apierr{
-                let alert = UIAlertController(title: NSLocalizedString("API_ERROR_TITLE", comment:"API Error message on title"), message: apiError.error, preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: NSLocalizedString("OK_ACT", comment:"Ok action on tap"), style: .`default`, handler: { _ in
-                    print("Api Error alert occured")
-                }))
-                self.present(alert, animated: true, completion: nil)
-            }
-            else if let alamoError = alaerr{
-                let alert = UIAlertController(title: NSLocalizedString("CONN_ERROR_TITLE", comment:"Connection Error message on title"), message: alamoError.localizedDescription, preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: NSLocalizedString("OK_ACT", comment:"Ok action on tap"), style: .`default`, handler: { _ in
-                    print("Alamofire Error alert occured")
-                }))
-                self.present(alert, animated: true, completion: nil)
-            }
-        }
-        */
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

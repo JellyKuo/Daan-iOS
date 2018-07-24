@@ -101,38 +101,7 @@ class CurriculumPageViewController: UIPageViewController, UIPageViewControllerDa
                 }))
                 self.present(alert, animated: true, completion: nil)
             }
-         }
-
-        /*
-        let req = ApiRequest(path: "curriculum", method: .get, token: self.token)
-        req.request {(res,apierr,alaerr) in
-            if let result = res {
-                self.curriculumWeek = CurriculumWeek(JSON: result)
-                if let JSONStr = self.curriculumWeek?.toJSONString(){
-                    print("Got curriculum from Api, setting userDefaults for key curriculumJSON")
-                    userDefaults?.set(JSONStr, forKey: "curriculumJSON")
-                }
-                else{
-                    print("Got curriculum from Api, but was unable to get JSON string from object, skip saving")
-                }
-                self.createPage()
-            }
-            else if let apiError = apierr{
-                let alert = UIAlertController(title: NSLocalizedString("API_ERROR_TITLE", comment:"API Error message on title"), message: apiError.error, preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: NSLocalizedString("OK_ACT", comment:"Ok action on tap"), style: .`default`, handler: { _ in
-                    print("Api Error alert occured")
-                }))
-                self.present(alert, animated: true, completion: nil)
-            }
-            else if let alamoError = alaerr{
-                let alert = UIAlertController(title: NSLocalizedString("CONN_ERROR_TITLE", comment:"Connection Error message on title"), message: alamoError.localizedDescription, preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: NSLocalizedString("OK_ACT", comment:"Ok action on tap"), style: .`default`, handler: { _ in
-                    print("Alamofire Error alert occured")
-                }))
-                self.present(alert, animated: true, completion: nil)
-            }
         }
-        */
     }
     
     func createPage(){

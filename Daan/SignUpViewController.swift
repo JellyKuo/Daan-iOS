@@ -114,43 +114,6 @@ class SecondSignUpViewController: UIViewController {
                 self.present(alert, animated: true, completion: nil)
             }
         }
-        /*
-        var reg:Register = Register(JSON: [:])!
-        reg.email=Email!
-        reg.password = Password!
-        reg.nick = Nickname!
-        reg.user_group = "student"
-        reg.school_account = SchoolAcc.text!
-        reg.school_pwd = SchoolPass.text!
-        
-        let req = ApiRequest(path: "actmanage/register", method: .post, params: reg.toJSON())
-        req.request{(res,apierr,alaerr) in
-            if let result = res {
-                self.token = Token(JSON: result)
-                print("Got result:\(result)")
-                let keychain = KeychainSwift()
-                keychain.set(self.Email, forKey: "account")
-                keychain.set(self.Password, forKey: "password")
-                print("Keychain set")
-                print("Calling performSegue ID:MainSegue")
-                self.performSegue(withIdentifier: "MainSegue", sender: self)
-            }
-            else if let apiError = apierr{
-                let alert = UIAlertController(title: NSLocalizedString("API_ERROR_TITLE", comment:"API Error message on title"), message: apiError.error, preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: NSLocalizedString("OK_ACT", comment:"Ok action on tap"), style: .`default`, handler: { _ in
-                    print("Api Error alert occured")
-                }))
-                self.present(alert, animated: true, completion: nil)
-            }
-            else if let alamoError = alaerr{
-                let alert = UIAlertController(title: NSLocalizedString("CONN_ERROR_TITLE", comment:"Connection Error message on title"), message: alamoError.localizedDescription, preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: NSLocalizedString("OK_ACT", comment:"Ok action on tap"), style: .`default`, handler: { _ in
-                    print("Alamofire Error alert occured")
-                }))
-                self.present(alert, animated: true, completion: nil)
-            }
-        }
- */
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

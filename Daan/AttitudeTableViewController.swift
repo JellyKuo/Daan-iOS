@@ -158,32 +158,6 @@ class AttitudeTableViewController: UITableViewController {
                 self.present(alert, animated: true, completion: nil)
             }
          }
-
-        /*
-        let req = ApiRequest(path: "attitudestatus", method: .get, token: self.token)
-        req.request {(res,apierr,alaerr) in
-            if let result = res {
-                self.attitudeStatus = AttitudeStatus(JSON: result)
-                self.reloadCount()
-                self.tableView.reloadData()
-                self.activityInd.stopAnimating()
-            }
-            else if let apiError = apierr{
-                let alert = UIAlertController(title: NSLocalizedString("API_ERROR_TITLE", comment:"API Error message on title"), message: apiError.error, preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: NSLocalizedString("OK_ACT", comment:"Ok action on tap"), style: .`default`, handler: { _ in
-                    print("Api Error alert occured")
-                }))
-                self.present(alert, animated: true, completion: nil)
-            }
-            else if let alamoError = alaerr{
-                let alert = UIAlertController(title: NSLocalizedString("CONN_ERROR_TITLE", comment:"Connection Error message on title"), message: alamoError.localizedDescription, preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: NSLocalizedString("OK_ACT", comment:"Ok action on tap"), style: .`default`, handler: { _ in
-                    print("Alamofire Error alert occured")
-                }))
-                self.present(alert, animated: true, completion: nil)
-            }
-        }
-        */
     }
     
     func reloadCount() {

@@ -78,33 +78,6 @@ class MainViewController: UIViewController,displayNameDelegate {
                 self.present(alert, animated: true, completion: nil)
             }
         })
-        
-        // Legacy API Code
-        /*
-         let req = ApiRequest(path: "actmanage/getUserInfo", method: .get, token: self.token)
-         req.request {(res,apierr,alaerr) in
-         if let result = res {
-         self.userInfo = UserInfo(JSON: result)
-         self.userDefaults.set(self.userInfo?.name, forKey: "name")
-         self.userDefaults.set(self.userInfo?.nick, forKey: "nickname")
-         self.displaySwitched()
-         }
-         else if let apiError = apierr{
-         let alert = UIAlertController(title: NSLocalizedString("API_ERROR_TITLE", comment:"API Error message on title"), message: apiError.error, preferredStyle: .alert)
-         alert.addAction(UIAlertAction(title: NSLocalizedString("OK_ACT", comment:"Ok action on tap"), style: .`default`, handler: { _ in
-         print("Api Error alert occured")
-         }))
-         self.present(alert, animated: true, completion: nil)
-         }
-         else if let alamoError = alaerr{
-         let alert = UIAlertController(title: NSLocalizedString("CONN_ERROR_TITLE", comment:"Connection Error message on title"), message: alamoError.localizedDescription, preferredStyle: .alert)
-         alert.addAction(UIAlertAction(title: NSLocalizedString("OK_ACT", comment:"Ok action on tap"), style: .`default`, handler: { _ in
-         print("Alamofire Error alert occured")
-         }))
-         self.present(alert, animated: true, completion: nil)
-         }
-         }
-         */
     }
     
     func autoLogin(){
@@ -149,38 +122,6 @@ class MainViewController: UIViewController,displayNameDelegate {
             }
             
         })
-        
-        /*
-         let req = ApiRequest(path: "actmanage/login", method: .post, params: ["account":account,"password":password])
-         req.request {(res,apierr,alaerr) in
-         if let result = res {
-         self.token = Token(JSON: result)
-         self.tokenDelegate?.tokenChanged(token: self.token)
-         print("Got result:\(result)")
-         self.getUserInfo()
-         }
-         else if let apiError = apierr{
-         let alert = UIAlertController(title: NSLocalizedString("API_ERROR_TITLE", comment:"API Error message on title"), message: apiError.error, preferredStyle: .alert)
-         alert.addAction(UIAlertAction(title: NSLocalizedString("OK_ACT", comment:"Ok action on tap"), style: .`default`, handler: { _ in
-         print("Api Error alert occured")
-         }))
-         self.present(alert, animated: true, completion: nil)
-         keychain.clear()
-         print("Login has API failed! Clearing keychain and performing welcome segue")
-         DispatchQueue.main.async(){
-         self.performSegue(withIdentifier: "WelcomeSegue", sender: self)
-         }
-         }
-         else if let alamoError = alaerr{
-         let alert = UIAlertController(title: NSLocalizedString("CONN_ERROR_TITLE", comment:"Connection Error message on title"), message: alamoError.localizedDescription, preferredStyle: .alert)
-         alert.addAction(UIAlertAction(title: NSLocalizedString("OK_ACT", comment:"Ok action on tap"), style: .`default`, handler: { _ in
-         print("Alamofire Error alert occured")
-         }))
-         self.present(alert, animated: true, completion: nil)
-         }
-         */
-        
-        
     }
     
     func WelcomeSplash() {
