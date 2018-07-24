@@ -29,6 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         
         //Crashlytics initialization
+        /*
         guard let userDefaults = UserDefaults.init(suiteName: "group.com.Jelly.Daan") else {
             fatalError("Cannot init UserDefaults with suiteName group.com.Jelly.Daan")
         }
@@ -52,6 +53,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             Fabric.with([Crashlytics.self])
             break
         }
+        */
+        
+        Fabric.with([Crashlytics.self])
         
         Messaging.messaging().delegate = self
         let token = Messaging.messaging().fcmToken
