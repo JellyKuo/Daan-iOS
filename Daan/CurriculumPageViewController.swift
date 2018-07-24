@@ -45,14 +45,15 @@ class CurriculumPageViewController: UIPageViewController, UIPageViewControllerDa
             fatalError("Cannot init new UserDefaults with suiteName")
         }
         if let JSON = userDefaults.string(forKey: "curriculumJSON"){
-            if JSON != "" , let modelObject = CurriculumWeek(JSONString: JSON){
+            let decoder = JSONDecoder()
+            do{
+                let modelObject = try decoder.decode(CurriculumWeek.self, from: JSON.data(using: .utf8)!)
                 print("Got curriculum from UsersDefault, using that")
                 curriculumWeek = modelObject
                 createPage()
             }
-            else{
-                print("Got JSON from UsersDefault, but was unable to map it to object. Grabbing from Api")
-                ApiReq()
+            catch{
+                print("JSON cannot be decoded to object, Grabbing from Api")
             }
         }
         else{
@@ -63,6 +64,47 @@ class CurriculumPageViewController: UIPageViewController, UIPageViewControllerDa
     
     func ApiReq() {
         let userDefaults = UserDefaults.init(suiteName: "group.com.Jelly.Daan")
+        guard let token = self.token else {
+            fatalError("Token is nil")
+        }
+        Api().getCurriculum(token) { result in
+            switch result{
+                case .success(let curriculumWeek):
+                    self.curriculumWeek = curriculumWeek
+                    print("Got curriculum from Api, setting userDefaults for key curriculumJSON")
+                    let encoder = JSONEncoder()
+                    do{
+                        let jsonData = try encoder.encode(curriculumWeek)
+                        let jsonString = String(data: jsonData, encoding: .utf8)!
+                        print("JSON String : " + jsonString)
+                        userDefaults?.set(jsonString, forKey: "curriculumJSON")
+                    }
+                    catch{
+                        let alert = UIAlertController(title: NSLocalizedString("ERROR_TITLE", comment:"Error message on title"), message: "Cannot encode curriculumWeek to JSON", preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: NSLocalizedString("OK_ACT", comment:"Ok action on tap"), style: .`default`, handler: { _ in
+                            print("Api Error alert occured")
+                        }))
+                        self.present(alert, animated: true, completion: nil)
+                    }
+                    DispatchQueue.main.async{
+                        self.createPage()
+                    }
+                case .apiError(let apiError):
+                    let alert = UIAlertController(title: NSLocalizedString("API_ERROR_TITLE", comment:"API Error message on title"), message: apiError.error, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: NSLocalizedString("OK_ACT", comment:"Ok action on tap"), style: .`default`, handler: { _ in
+                        print("Api Error alert occured")
+                    }))
+                    self.present(alert, animated: true, completion: nil)
+            case .networkError(let netError):
+                let alert = UIAlertController(title: NSLocalizedString("CONN_ERROR_TITLE", comment:"Connection Error message on title"), message: netError.localizedDescription, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: NSLocalizedString("OK_ACT", comment:"Ok action on tap"), style: .`default`, handler: { _ in
+                    print("Alamofire Error alert occured")
+                }))
+                self.present(alert, animated: true, completion: nil)
+            }
+         }
+
+        /*
         let req = ApiRequest(path: "curriculum", method: .get, token: self.token)
         req.request {(res,apierr,alaerr) in
             if let result = res {
@@ -91,6 +133,7 @@ class CurriculumPageViewController: UIPageViewController, UIPageViewControllerDa
                 self.present(alert, animated: true, completion: nil)
             }
         }
+        */
     }
     
     func createPage(){

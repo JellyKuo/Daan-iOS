@@ -245,17 +245,34 @@ class MainViewController: UIViewController,displayNameDelegate {
         guard let userDefaults = UserDefaults.init(suiteName: "group.com.Jelly.Daan") else {
             fatalError("Cannot init UserDefaults with suiteName group.com.Jelly.Daan")
         }
+        
         if let JSON = userDefaults.string(forKey: "curriculumJSON"), JSON != "" {
+            
+            let decoder = JSONDecoder()
+            do{
+                let curr = try decoder.decode(CurriculumWeek.self, from: JSON.data(using: .utf8)!)
+                print("Got curriculum JSON from UserDefaults and mapped to object")
+                let currRes = getCurr(currWeek: curr)
+                nextClassLab.text = " " + currRes.subject! + " "
+            }
+            catch{
+                print("JSON cannot be decoded to object, prompting to open curriculum")
+                nextClassLab.text = " "+NSLocalizedString("CURRICULUM_NOT_CACHED_MSG", comment: "Curriculum cache is not downloaded, tap curriculum to cache")+" "
+            }
+            
+            /*
             if let curr = CurriculumWeek(JSONString: JSON){
                 print("Got curriculum JSON from UserDefaults and mapped to object")
                 let currRes = getCurr(currWeek: curr)
                 nextClassLab.text = " " + currRes.subject! + " "
             }
+            */
         }
         else{
             print("curriculum JSON is empty, prompting to open curriculum")
             nextClassLab.text = " "+NSLocalizedString("CURRICULUM_NOT_CACHED_MSG", comment: "Curriculum cache is not downloaded, tap curriculum to cache")+" "
         }
+ 
         
     }
     

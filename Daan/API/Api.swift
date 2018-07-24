@@ -131,7 +131,7 @@ class Api{
     }
     
     func getCurriculum(_ token:Token,completion:@escaping ((ApiResult<CurriculumWeek>)->Void)) {
-        let request = ApiRequest2("/curriculum", method: "GET")
+        let request = ApiRequest2("/curriculum", method: "GET",token: token)
         request.send(completion: { response in
             self.decodeResponse(response: response, completion: completion)
         })

@@ -65,9 +65,9 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DtK-zi-QGg">
-                                <rect key="frame" x="0.0" y="317" width="375" height="350"/>
+                                <rect key="frame" x="0.0" y="367" width="375" height="300"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="350" id="lUS-0t-I9x"/>
+                                    <constraint firstAttribute="height" constant="300" id="lUS-0t-I9x"/>
                                 </constraints>
                                 <connections>
                                     <segue destination="niR-O0-2rk" kind="embed" identifier="EmbedTableViewSegue" id="Jhn-oA-M23"/>
@@ -148,8 +148,8 @@
         <scene sceneID="6ER-eQ-ng9">
             <objects>
                 <tableViewController id="niR-O0-2rk" customClass="MainTableViewController" customModule="Daan" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="static" style="plain" separatorStyle="default" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="h8k-vP-V1A">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="350"/>
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" dataMode="static" style="plain" separatorStyle="default" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="h8k-vP-V1A">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <sections>
