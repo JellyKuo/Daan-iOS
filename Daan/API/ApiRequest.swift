@@ -14,7 +14,7 @@ enum RequestResponse {
     case failure(Error)
 }
 
-class ApiRequest2 {
+class ApiRequest {
     private var request:URLRequest
     
     init(_ path:String,method:String) {
