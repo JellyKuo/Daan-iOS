@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import ObjectMapper
 
 class CurriculumPageViewController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     var token:Token? = nil

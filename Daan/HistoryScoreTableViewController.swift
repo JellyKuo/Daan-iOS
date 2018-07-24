@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import ObjectMapper
 
 class HistoryScoreTableViewController: UITableViewController, HistoryScoreViewControllerDelegate {
     

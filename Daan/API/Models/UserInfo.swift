@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import ObjectMapper
 
 struct UserInfo: Codable {
     let name: String

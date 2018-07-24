@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import ObjectMapper  //TODO: Split array mapping to mapper
 
 class AbsentTableViewController: UITableViewController {
     
