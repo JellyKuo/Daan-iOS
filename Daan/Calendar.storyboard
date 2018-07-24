@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SPL-PN-TIe">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--[DEV] Calendar-->
+        <scene sceneID="7as-OT-kdF">
+            <objects>
+                <viewController id="SPL-PN-TIe" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uSe-Pg-mOg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZNE-do-163">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <connections>
+                                    <segue destination="2fa-3M-iW1" kind="embed" id="gcy-Bl-Lfh"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="esd-g1-amS" firstAttribute="trailing" secondItem="ZNE-do-163" secondAttribute="trailing" id="BPH-kD-wIL"/>
+                            <constraint firstItem="esd-g1-amS" firstAttribute="bottom" secondItem="ZNE-do-163" secondAttribute="bottom" id="NwA-Hx-QFe"/>
+                            <constraint firstItem="ZNE-do-163" firstAttribute="leading" secondItem="esd-g1-amS" secondAttribute="leading" id="Q1T-Mx-Ky6"/>
+                            <constraint firstItem="ZNE-do-163" firstAttribute="top" secondItem="esd-g1-amS" secondAttribute="top" id="i9k-G4-voR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="esd-g1-amS"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="[DEV] Calendar" id="1vQ-5c-xLS"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LDx-Vy-NY1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-44" y="156"/>
+        </scene>
+        <!--Calendar Table View Controller-->
+        <scene sceneID="2jX-md-exx">
+            <objects>
+                <tableViewController id="2fa-3M-iW1" customClass="CalendarTableViewController" customModule="Daan" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="TwV-JL-VIH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CalendarCell" rowHeight="80" id="6Db-gJ-3Yb" customClass="CalendarTableViewCell" customModule="Daan" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="80"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6Db-gJ-3Yb" id="7gR-jF-FJw">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I1N-6g-RMk">
+                                            <rect key="frame" x="16" y="11" width="38" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Content" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Zx-Jz-M7h">
+                                            <rect key="frame" x="16" y="48.5" width="61.5" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8GB-IM-f28">
+                                            <rect key="frame" x="329" y="11" width="30" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="8GB-IM-f28" firstAttribute="top" secondItem="7gR-jF-FJw" secondAttribute="topMargin" id="Ees-FF-an6"/>
+                                        <constraint firstItem="8GB-IM-f28" firstAttribute="trailing" secondItem="7gR-jF-FJw" secondAttribute="trailingMargin" id="H7N-1Q-IFo"/>
+                                        <constraint firstItem="I1N-6g-RMk" firstAttribute="top" secondItem="7gR-jF-FJw" secondAttribute="topMargin" id="l57-Uf-rDP"/>
+                                        <constraint firstItem="7Zx-Jz-M7h" firstAttribute="leading" secondItem="7gR-jF-FJw" secondAttribute="leadingMargin" id="p7O-TJ-HuD"/>
+                                        <constraint firstItem="7Zx-Jz-M7h" firstAttribute="bottom" secondItem="7gR-jF-FJw" secondAttribute="bottomMargin" id="rqW-FH-nn5"/>
+                                        <constraint firstItem="I1N-6g-RMk" firstAttribute="leading" secondItem="7gR-jF-FJw" secondAttribute="leadingMargin" id="yar-sD-bJy"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="lblContent" destination="7Zx-Jz-M7h" id="tV9-Xx-Seg"/>
+                                    <outlet property="lblEnd" destination="8GB-IM-f28" id="eu9-CK-Tz9"/>
+                                    <outlet property="lblStart" destination="I1N-6g-RMk" id="FGQ-Q0-rpw"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="2fa-3M-iW1" id="FXI-XN-Z3l"/>
+                            <outlet property="delegate" destination="2fa-3M-iW1" id="ffc-kT-86h"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="brF-an-kNk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="764" y="155"/>
+        </scene>
+    </scenes>
+</document>

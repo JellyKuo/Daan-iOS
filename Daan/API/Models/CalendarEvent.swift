@@ -9,6 +9,7 @@
 import Foundation
 
 struct CalendarEvent:Codable{
-    let date:String
+    let start:String
+    let end:String
     let content:String
 }
