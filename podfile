@@ -5,8 +5,6 @@ source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
 target 'Daan' do
-  pod 'Alamofire'
-  pod 'ObjectMapper'
   pod 'KeychainSwift'
 
   pod 'Firebase/Core'
@@ -19,7 +17,6 @@ target 'Daan' do
 end
 
 target 'Today Curriculum' do
-  pod 'ObjectMapper'
 
   # Pods for Today Curriculum
 

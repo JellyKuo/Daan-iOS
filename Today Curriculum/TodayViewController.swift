@@ -8,7 +8,6 @@
 
 import UIKit
 import NotificationCenter
-import ObjectMapper
 
 class TodayViewController: UIViewController, NCWidgetProviding {
     
