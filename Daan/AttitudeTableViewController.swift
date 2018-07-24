@@ -67,7 +67,7 @@ class AttitudeTableViewController: UITableViewController {
             else{
                 fatalError("The dequeued cell is not an instance of AttitudeTableViewCell")
         }
-        let status = attitudeStatus?.status![indexPath.row]
+        let status = attitudeStatus?.status[indexPath.row]
         cell.dateLab.text = status?.date
         cell.descLab.text = status?.text
         cell.statusLab.text = status?.item
@@ -190,12 +190,12 @@ class AttitudeTableViewController: UITableViewController {
         guard let count = attitudeStatus?.count else{
             fatalError("Called reloadCount but count is null")
         }
-        SmallCiteLab.text = count.smallcite != nil ? String(count.smallcite!) : "?"
-        MiddleCiteLab.text = count.middlecite != nil ? String(count.middlecite!) : "?"
-        BigCiteLab.text = count.bigcite != nil ? String(count.bigcite!) : "?"
-        SmallFaultLab.text = count.smallfault != nil ? String(count.smallfault!) : "?"
-        MiddleFaultLab.text = count.middlefault != nil ? String(count.middlefault!) : "?"
-        BigFaultLab.text = count.bigfault != nil ? String(count.bigfault!) : "?"
+        SmallCiteLab.text = String(count.smallcite)
+        MiddleCiteLab.text = String(count.middlecite)
+        BigCiteLab.text = String(count.bigcite)
+        SmallFaultLab.text = String(count.smallfault)
+        MiddleFaultLab.text = String(count.middlefault)
+        BigFaultLab.text = String(count.bigfault)
         
     }
     

@@ -7,26 +7,12 @@
 //
 
 import Foundation
-import ObjectMapper
 
-struct SectionalScore: Codable,Mappable {
-    var subject: String?
-    var first_section: Int?
-    var second_section: Int?
-    var last_section: Int?
-    var performance: Int?
-    var average: Int?
-    
-    init?(map: Map) {
-        
-    }
-    
-    mutating func mapping(map: Map) {
-        subject         <- map["subject"]
-        first_section   <- map["first_section"]
-        second_section  <- map["second_section"]
-        last_section    <- map["last_section"]
-        performance     <- map["performance"]
-        average         <- map["average"]
-    }
+struct SectionalScore: Codable {
+    let subject: String
+    let first_section: Int?
+    let second_section: Int?
+    let last_section: Int?
+    let performance: Int?
+    let average: Int?
 }

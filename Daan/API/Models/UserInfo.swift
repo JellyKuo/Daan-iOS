@@ -9,27 +9,16 @@
 import Foundation
 import ObjectMapper
 
-struct UserInfo: Codable,Mappable {
-    var name: String?
-    var nick: String?
-    var cls: String?  //class
-    var group: String?
+struct UserInfo: Codable {
+    let name: String
+    let nick: String
+    let cls: String  //class
+    let group: String
     
     enum CodingKeys:String,CodingKey{
         case name
         case nick
         case cls = "class"
         case group
-    }
-    
-    init?(map: Map) {
-        
-    }
-    
-    mutating func mapping(map: Map) {
-        name   <- map["name"]
-        nick   <- map["nick"]
-        cls    <- map["class"]
-        group  <- map["group"]
     }
 }

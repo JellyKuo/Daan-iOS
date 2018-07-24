@@ -7,24 +7,11 @@
 //
 
 import Foundation
-import ObjectMapper
 
-struct HistoryScore: Codable,Mappable {
-    var subject: String?
-    var type: String?
-    var credit: String?
-    var score: Int?
-    var qualify: Int?
-    
-    init?(map: Map) {
-        
-    }
-    
-    mutating func mapping(map: Map) {
-        subject  <- map["subject"]
-        type     <- map["type"]
-        credit   <- map["credit"]
-        score    <- map["score"]
-        qualify  <- map["qualify"]
-    }
+struct HistoryScore: Codable {
+    let subject: String
+    let type: String
+    let credit: String
+    let score: Int?
+    let qualify: Int?
 }

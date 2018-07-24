@@ -315,7 +315,7 @@ class MainViewController: UIViewController,displayNameDelegate {
                     else{
                         index = 0
                         nextClassDescLab.text = NSLocalizedString("MONDAY", comment: "Monday")
-                        return currWeek.week1![0]
+                        return currWeek.week1[0]
                     }
                 }
                 else{
@@ -331,7 +331,7 @@ class MainViewController: UIViewController,displayNameDelegate {
                 else{
                     index = 0
                     nextClassDescLab.text = NSLocalizedString("MONDAY", comment: "Monday")
-                    return currWeek.week1![0]
+                    return currWeek.week1[0]
                 }
             }
         }

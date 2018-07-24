@@ -163,7 +163,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
                     else{
                         index = 0
                         descLabel.text = NSLocalizedString("MONDAY", comment: "Monday")
-                        return currWeek.week1![0]
+                        return currWeek.week1[0]
                     }
                 }
                 else{
@@ -179,7 +179,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
                 else{
                     index = 0
                     descLabel.text = NSLocalizedString("MONDAY", comment: "Monday")
-                    return currWeek.week1![0]
+                    return currWeek.week1[0]
                 }
             }
         }

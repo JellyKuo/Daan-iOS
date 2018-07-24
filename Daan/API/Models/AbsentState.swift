@@ -7,30 +7,15 @@
 //
 
 import Foundation
-import ObjectMapper
 
-struct AbsentState: Codable,Mappable {
-    var date: String?
-    var type: String?
-    var cls: String?  //class
+struct AbsentState: Codable {
+    let date: String
+    let type: String
+    let cls: String  //class
     
     enum CodingKeys:String,CodingKey{
         case date
         case type
         case cls = "class"
-    }
-    
-    init?(map: Map) {
-        
-    }
-    
-    mutating func mapping(map: Map) {
-        date   <- map["date"]
-        type   <- map["type"]
-        cls    <- map["class"]
-    }
-    
-    static func mapToArray(JSON:String) -> [AbsentState]? {
-        return nil
     }
 }

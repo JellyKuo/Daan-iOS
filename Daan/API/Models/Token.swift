@@ -7,16 +7,7 @@
 //
 
 import Foundation
-import ObjectMapper
 
-struct Token: Mappable,Codable {
-    var token: String
-    
-    init?(map: Map) {
-        self.token = ""
-    }
-    
-    mutating func mapping(map: Map) {
-        token   <- map["token"]
-    }
+struct Token: Codable {
+    let token: String
 }

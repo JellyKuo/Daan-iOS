@@ -70,10 +70,8 @@ class AbsentTableViewController: UITableViewController {
         }
         let state = absentState![indexPath.row]
         cell.dateLab.text = state.date
-        cell.classLab.text = "第" + state.cls! + "節"
-        
-        if let type = state.type
-        {
+        cell.classLab.text = "第" + state.cls + "節"
+        let type = state.type
             if(type.range(of: "遲") != nil){
                 cell.typeLab.textColor = UIColor(hex:"cc9933")
                 cell.typeLab.text = NSLocalizedString("ABS_LATE", comment: "Absent type late")
@@ -102,7 +100,7 @@ class AbsentTableViewController: UITableViewController {
             else{
                 cell.typeLab.text = state.type
             }
-        }
+        
         
         LateLab.text = String(count[0])
         SickLab.text = String(count[1]) + "分"
@@ -160,7 +158,7 @@ class AbsentTableViewController: UITableViewController {
                 case .success(let absent):
                     self.absentState = absent
                     for state in self.absentState!{
-                        switch state.type!{
+                        switch state.type{
                         case "遲":
                             self.count[0] += 1
                             break
@@ -183,7 +181,7 @@ class AbsentTableViewController: UITableViewController {
                             self.count[5] += 1
                             break
                         default:
-                            print("I cant find \(state.type!) in the list, not counting")
+                            print("I cant find \(state.type) in the list, not counting")
                             break;
                         }
                     }

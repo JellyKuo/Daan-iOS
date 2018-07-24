@@ -7,42 +7,18 @@
 //
 
 import Foundation
-import ObjectMapper
 
-struct Curriculum: Codable,Mappable {
-    var start: String?
-    var end: String?
-    var subject: String?
-    var teacher: String?
-    
-    init?(map: Map) {
-        
-    }
-    
-    mutating func mapping(map: Map) {
-        start    <- map["start"]
-        end      <- map["end"]
-        subject  <- map["subject"]
-        teacher  <- map["teacher"]
-    }
+struct Curriculum: Codable {
+    let start: String?
+    let end: String?
+    let subject: String?
+    let teacher: String?
 }
 
-struct CurriculumWeek: Codable,Mappable {
-    var week1: [Curriculum]?
-    var week2: [Curriculum]?
-    var week3: [Curriculum]?
-    var week4: [Curriculum]?
-    var week5: [Curriculum]?
-    
-    init?(map: Map) {
-        
-    }
-    
-    mutating func mapping(map: Map) {
-        week1  <- map["week1"]
-        week2  <- map["week2"]
-        week3  <- map["week3"]
-        week4  <- map["week4"]
-        week5  <- map["week5"]
-    }
+struct CurriculumWeek: Codable {
+    let week1: [Curriculum]
+    let week2: [Curriculum]
+    let week3: [Curriculum]
+    let week4: [Curriculum]
+    let week5: [Curriculum]
 }

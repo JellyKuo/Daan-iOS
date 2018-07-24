@@ -69,6 +69,7 @@ class ApiRequest2 {
 
 
 // TODO: Replace ApiRequest with ApiRequest 2
+/*
 class ApiRequest{
     typealias JSONDictionary = [String: Any]
     typealias JSONArray = [JSONDictionary]
@@ -268,3 +269,4 @@ class ApiRequest{
     
 }
 
+*/

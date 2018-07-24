@@ -7,56 +7,23 @@
 //
 
 import Foundation
-import ObjectMapper
 
-struct Attitude: Codable,Mappable {
-    var date: String?
-    var item: String?
-    var text: String?
-    
-    init?(map: Map) {
-        
-    }
-    
-    mutating func mapping(map: Map) {
-        date  <- map["date"]
-        item  <- map["item"]
-        text  <- map["text"]
-    }
+struct Attitude: Codable {
+    let date: String
+    let item: String
+    let text: String
 }
 
-struct AttitudeStatus: Codable,Mappable {
-    var status: [Attitude]?
-    var count: AttitudeCount?
-    
-    init?(map: Map) {
-        
-    }
-    
-    mutating func mapping(map: Map) {
-        status  <- map["status"]
-        count   <- map["count"]
-    }
+struct AttitudeStatus: Codable {
+    let status: [Attitude]
+    let count: AttitudeCount
 }
 
-struct AttitudeCount: Codable,Mappable {
-    var smallcite: Int?
-    var smallfault: Int?
-    var middlecite: Int?
-    var middlefault: Int?
-    var bigcite: Int?
-    var bigfault: Int?
-    
-    init?(map: Map) {
-        
-    }
-    
-    mutating func mapping(map: Map) {
-        smallcite    <- map["smallcite"]
-        smallfault   <- map["smallfault"]
-        middlecite   <- map["middlecite"]
-        middlefault  <- map["middlefault"]
-        bigcite      <- map["bigcite"]
-        bigfault     <- map["bigfault"]
-    }
+struct AttitudeCount: Codable {
+    let smallcite: Int
+    let smallfault: Int
+    let middlecite: Int
+    let middlefault: Int
+    let bigcite: Int
+    let bigfault: Int
 }

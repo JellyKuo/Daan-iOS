@@ -88,6 +88,7 @@ class SecondSignUpViewController: UIViewController {
     }
     
     @IBAction func RegisterTouch(_ sender: Any) {
+        /*
         var reg:Register = Register(JSON: [:])!
         reg.email=Email!
         reg.password = Password!
@@ -123,6 +124,7 @@ class SecondSignUpViewController: UIViewController {
                 self.present(alert, animated: true, completion: nil)
             }
         }
+ */
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

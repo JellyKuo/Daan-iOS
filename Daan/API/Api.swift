@@ -30,9 +30,7 @@ class Api{
                     completion(.apiError(apiErr))
                 }
                 catch{
-                    var apiErr = ApiError()
-                    apiErr.code = 0
-                    apiErr.error = "Unable to decode server's response"
+                    let apiErr = ApiError(code:0,error:"Unable to decode server's response")
                     completion(.apiError(apiErr))
                 }
             }
