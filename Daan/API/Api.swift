@@ -102,7 +102,7 @@ class Api{
         })
     }
     
-    func getSectionalExam(_ token:Token,semester:Int,completion:@escaping((ApiResult<SectionalScore>)->Void)) {
+    func getSectionalExam(_ token:Token,semester:Int,completion:@escaping((ApiResult<[SectionalScore]>)->Void)) {
         let request = ApiRequest2("/scorequery/sectionalexamscore/\(semester)",method:"GET",token:token)
         request.send(completion: { response in
             self.decodeResponse(response: response, completion: completion)
