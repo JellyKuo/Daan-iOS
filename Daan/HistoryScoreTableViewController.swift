@@ -124,6 +124,51 @@ class HistoryScoreTableViewController: UITableViewController, HistoryScoreViewCo
     func GetData(grade:Int) {
         upHistoryScore = nil
         downHistoryScore = nil
+
+        guard let token = self.token else {
+            fatalError("Token should not be nil")
+        }
+        Api().getHistoryScore(token, grade: grade, semester: 1) { result in
+            switch result{
+            case .success(let upHistoryScore):
+                self.upHistoryScore = upHistoryScore
+                self.refreshTable()
+            case .apiError(let apiError):
+                let alert = UIAlertController(title: NSLocalizedString("API_ERROR_TITLE", comment:"API Error message on title"), message: apiError.error, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: NSLocalizedString("OK_ACT", comment:"Ok action on tap"), style: .`default`, handler: { _ in
+                    print("Api Error alert occured")
+                }))
+                self.present(alert, animated: true, completion: nil)
+            case .networkError(let netError):
+                let alert = UIAlertController(title: NSLocalizedString("CONN_ERROR_TITLE", comment:"Connection Error message on title"), message: netError.localizedDescription, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: NSLocalizedString("OK_ACT", comment:"Ok action on tap"), style: .`default`, handler: { _ in
+                    print("Alamofire Error alert occured")
+                }))
+                self.present(alert, animated: true, completion: nil)
+            }
+        }
+
+        Api().getHistoryScore(token, grade: grade, semester: 2) { result in
+            switch result{
+            case .success(let downHistoryScore):
+                self.downHistoryScore = downHistoryScore
+                self.refreshTable()
+            case .apiError(let apiError):
+                let alert = UIAlertController(title: NSLocalizedString("API_ERROR_TITLE", comment:"API Error message on title"), message: apiError.error, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: NSLocalizedString("OK_ACT", comment:"Ok action on tap"), style: .`default`, handler: { _ in
+                    print("Api Error alert occured")
+                }))
+                self.present(alert, animated: true, completion: nil)
+            case .networkError(let netError):
+                let alert = UIAlertController(title: NSLocalizedString("CONN_ERROR_TITLE", comment:"Connection Error message on title"), message: netError.localizedDescription, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: NSLocalizedString("OK_ACT", comment:"Ok action on tap"), style: .`default`, handler: { _ in
+                    print("Alamofire Error alert occured")
+                }))
+                self.present(alert, animated: true, completion: nil)
+            }
+        }
+
+        /*
         let upReq = ApiRequest(path: "scorequery/historyscore/"+String(grade)+"/1", method: .get, token: self.token)
         let downReq = ApiRequest(path: "scorequery/historyscore/"+String(grade)+"/2", method: .get, token: self.token)
         upReq.requestArr {(res,apierr,alaerr) in
@@ -168,12 +213,15 @@ class HistoryScoreTableViewController: UITableViewController, HistoryScoreViewCo
                 self.present(alert, animated: true, completion: nil)
             }
         }
+        */
     }
     
     func refreshTable(){
         if upHistoryScore != nil && downHistoryScore != nil{
             print("Both request is filled! Reload table's data")
-            tableView.reloadData()
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }
         else{
             print("refreshTable called, but one of the request is not completed yet")

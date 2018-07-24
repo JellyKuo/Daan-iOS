@@ -62,7 +62,7 @@ class Api{
         let encoder = JSONEncoder()
         do{
             let jsonData = try encoder.encode(register)
-            let request = ApiRequest2("/actmanage/login", method: "POST", data: jsonData)
+            let request = ApiRequest2("/actmanage/register", method: "POST", data: jsonData)
             request.send(completion: {response in
                 self.decodeResponse(response: response, completion: completion)
             })
@@ -95,7 +95,7 @@ class Api{
         })
     }
     
-    func getHistoryScore(_ token:Token, grade:Int,semester:Int,completion:@escaping ((ApiResult<HistoryScore>)->Void)) {
+    func getHistoryScore(_ token:Token, grade:Int,semester:Int,completion:@escaping ((ApiResult<[HistoryScore]>)->Void)) {
         let request = ApiRequest2("/scorequery/historyscore/\(grade)/\(semester)",method:"GET",token:token)
         request.send(completion: { response in
             self.decodeResponse(response: response, completion: completion)
