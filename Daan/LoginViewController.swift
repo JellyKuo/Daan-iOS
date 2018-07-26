@@ -46,10 +46,7 @@ class LoginViewController: UIViewController {
             case .success(let token):
                 self.token = token
                 print("Got result:\(result)")
-                let keychain = KeychainSwift()
-                keychain.set(account, forKey: "account")
-                keychain.set(password, forKey: "password")
-                print("Keychain value set")
+                Keychain.sharedInstance.login = login
                 print("Calling performSegue ID:MainSegue")
                 self.performSegue(withIdentifier: "MainSegue", sender: self)
             case .apiError(let apiError):

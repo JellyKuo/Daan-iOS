@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import KeychainSwift
 import MessageUI
 import SafariServices
 import FirebaseMessaging  //Remove on production
@@ -190,9 +189,8 @@ class SettingsTableViewController: UITableViewController,MFMailComposeViewContro
     }
     
     func logout(supressAlert:Bool) {
-        let keychain = KeychainSwift()
-        keychain.clear()
-        if(keychain.get("account") == nil&&keychain.get("password") == nil && !supressAlert){
+        Keychain.sharedInstance.clear()
+        if(!Keychain.sharedInstance.loginExists && !supressAlert){
             let alert = UIAlertController(title: NSLocalizedString("SUCCESS_TITLE", comment: "Success message on title"), message: NSLocalizedString("LOGOUT_SUCCESS_MSG", comment: "Logout successful message"), preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: NSLocalizedString("OK_ACT", comment:"Ok action on tap"), style: .`default`, handler: { _ in
                 print("Logout success! Clearing nav stack")

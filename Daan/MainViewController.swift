@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import KeychainSwift
 import FirebaseMessaging
 
 class MainViewController: UIViewController,displayNameDelegate {
@@ -81,14 +80,7 @@ class MainViewController: UIViewController,displayNameDelegate {
     }
     
     func autoLogin(){
-        let keychain = KeychainSwift()
-        guard let account = keychain.get("account"),let password = keychain.get("password") else{
-            print("Account and password does not exist in keychain, perform welcome segue")
-            DispatchQueue.main.async(){
-                self.performSegue(withIdentifier: "WelcomeSegue", sender: self)
-            }
-            return
-        }
+        
         if(token != nil){
             getUserInfo()
             return
@@ -96,7 +88,15 @@ class MainViewController: UIViewController,displayNameDelegate {
         
         // FIXME: Refactor this API call
         
-        let login = Login(account: account, password: password)
+        
+        guard let login = Keychain.sharedInstance.login else{
+            print("Account and password does not exist in keychain, perform welcome segue")
+            DispatchQueue.main.async(){
+                self.performSegue(withIdentifier: "WelcomeSegue", sender: self)
+            }
+            return
+        }
+        
         Api().login(login, completion: { (result) in
             switch result{
             case .success(let token):
@@ -108,7 +108,7 @@ class MainViewController: UIViewController,displayNameDelegate {
                     print("Api Error alert occured")
                 }))
                 self.present(alert, animated: true, completion: nil)
-                keychain.clear()
+                Keychain.sharedInstance.clear()
                 print("Login has API failed! Clearing keychain and performing welcome segue")
                 DispatchQueue.main.async(){
                     self.performSegue(withIdentifier: "WelcomeSegue", sender: self)
