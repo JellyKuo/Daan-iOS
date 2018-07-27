@@ -80,15 +80,16 @@
                                 <state key="normal" title="Tappy Tappy">
                                     <color key="titleColor" red="0.96470588239999999" green="0.96862745100000003" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <state key="highlighted" title="Holding Tappy">
-                                    <color key="titleColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
+                                <state key="highlighted" title="Holding Tappy"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="animated" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="tappyTap:" destination="cM6-F4-nbP" eventType="touchUpInside" id="1j3-0A-Bvv"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -125,6 +126,7 @@
                         <outlet property="nameLab" destination="X9T-KE-Yyq" id="JLm-uY-uHT"/>
                         <outlet property="nextClassDescLab" destination="Kb7-ON-7vX" id="r7Y-Kz-fGZ"/>
                         <outlet property="nextClassLab" destination="laZ-i3-9ap" id="OTf-Am-3Fa"/>
+                        <outlet property="tappyBtn" destination="pAf-Zf-ksK" id="7yG-XI-bik"/>
                         <segue destination="ecJ-IE-rrs" kind="showDetail" identifier="WelcomeSegue" animates="NO" id="vqk-4a-PWM"/>
                         <segue destination="KSh-Lv-Mh9" kind="presentation" identifier="SplashSegue" id="LP9-AI-0cH"/>
                     </connections>

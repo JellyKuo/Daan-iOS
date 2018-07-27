@@ -79,6 +79,26 @@ class MainViewController: UIViewController,displayNameDelegate {
         })
     }
     
+    @IBOutlet weak var tappyBtn: Button!
+    var tappyTapCount = 0
+    @IBAction func tappyTap(_ sender: Any) {
+        tappyTapCount += 1
+        print("Tappy Count: \(tappyTapCount)")
+        if(tappyTapCount == 50){
+            tappyBtn.setTitle("TAP TAP TAPPY", for: .normal)
+            tappyBtn.setTitleColor(UIColor.black, for: .normal)
+            let gradient = CAGradientLayer()
+            
+            gradient.frame = tappyBtn.bounds
+            gradient.colors = [UIColor.red.cgColor, UIColor.orange.cgColor,UIColor.yellow.cgColor,UIColor.green.cgColor,UIColor.blue.cgColor,UIColor.purple.cgColor]
+            gradient.startPoint = CGPoint(x: 0, y: 0)
+            gradient.endPoint = CGPoint(x:1,y:0)
+            
+            tappyBtn.layer.insertSublayer(gradient, at: 0)
+            
+        }
+    }
+    
     func autoLogin(){
         
         if(token != nil){
