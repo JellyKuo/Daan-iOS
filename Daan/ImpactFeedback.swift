@@ -31,7 +31,7 @@ class ImpactFeedback{
             styleStr = "heavy"
         case .medium:
             styleStr = "medium"
-        case .light:`
+        case .light:
             styleStr = "light"
         }
         print("[Impact] Feedback generator prepare \(styleStr)")
