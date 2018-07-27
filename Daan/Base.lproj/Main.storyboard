@@ -73,17 +73,38 @@
                                     <segue destination="niR-O0-2rk" kind="embed" identifier="EmbedTableViewSegue" id="Jhn-oA-M23"/>
                                 </connections>
                             </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pAf-Zf-ksK" customClass="Button" customModule="Daan" customModuleProvider="target">
+                                <rect key="frame" x="10" y="223" width="355" height="134"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title="Tappy Tappy">
+                                    <color key="titleColor" red="0.96470588239999999" green="0.96862745100000003" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="highlighted" title="Holding Tappy">
+                                    <color key="titleColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="animated" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Kb7-ON-7vX" firstAttribute="top" secondItem="GU6-Vx-hZ7" secondAttribute="bottom" constant="25" id="5bT-7w-Z4E"/>
+                            <constraint firstItem="DtK-zi-QGg" firstAttribute="top" secondItem="pAf-Zf-ksK" secondAttribute="bottom" constant="10" id="7Vk-HZ-bLN"/>
                             <constraint firstItem="X9T-KE-Yyq" firstAttribute="leading" secondItem="GU6-Vx-hZ7" secondAttribute="trailing" id="7XI-ve-Kof"/>
                             <constraint firstItem="Kb7-ON-7vX" firstAttribute="leading" secondItem="EKA-Wg-V5q" secondAttribute="leading" constant="20" id="EDw-al-URw"/>
                             <constraint firstItem="EKA-Wg-V5q" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Kb7-ON-7vX" secondAttribute="trailing" constant="20" id="Mrb-En-EC0"/>
+                            <constraint firstItem="pAf-Zf-ksK" firstAttribute="leading" secondItem="EKA-Wg-V5q" secondAttribute="leading" constant="10" id="Ozq-PN-zd4"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="laZ-i3-9ap" secondAttribute="trailing" constant="20" symbolic="YES" id="RTB-I4-qDs"/>
                             <constraint firstItem="GU6-Vx-hZ7" firstAttribute="baseline" secondItem="X9T-KE-Yyq" secondAttribute="baseline" id="ZA1-Iq-gvh"/>
+                            <constraint firstItem="EKA-Wg-V5q" firstAttribute="trailing" secondItem="pAf-Zf-ksK" secondAttribute="trailing" constant="10" id="Zgi-Aw-o4l"/>
                             <constraint firstItem="EKA-Wg-V5q" firstAttribute="bottom" secondItem="DtK-zi-QGg" secondAttribute="bottom" id="eC0-rw-fqr"/>
                             <constraint firstItem="laZ-i3-9ap" firstAttribute="top" secondItem="Kb7-ON-7vX" secondAttribute="bottom" constant="8" id="ezm-Se-KSd"/>
+                            <constraint firstItem="pAf-Zf-ksK" firstAttribute="top" secondItem="laZ-i3-9ap" secondAttribute="bottom" constant="10" id="ftm-6d-dsk"/>
                             <constraint firstItem="EKA-Wg-V5q" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="X9T-KE-Yyq" secondAttribute="trailing" constant="20" id="k7a-S9-LWL"/>
                             <constraint firstItem="DtK-zi-QGg" firstAttribute="leading" secondItem="EKA-Wg-V5q" secondAttribute="leading" id="m5S-GP-N0V"/>
                             <constraint firstItem="EKA-Wg-V5q" firstAttribute="trailing" secondItem="DtK-zi-QGg" secondAttribute="trailing" id="niZ-TR-acZ"/>
@@ -286,7 +307,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="[DEV] Calendar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="z6K-qo-slT">
-                                                    <rect key="frame" x="16" y="0.0" width="343" height="49.5"/>
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="49.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
