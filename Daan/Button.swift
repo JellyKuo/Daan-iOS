@@ -55,10 +55,26 @@ extension UIButton{
     }
     
     @objc private func animateDown(sender: UIButton) {
+        if #available(iOS 10.0, *) {
+            ImpactFeedback.sharedInstance.prepare(style: .medium)
+            ImpactFeedback.sharedInstance.impact()
+            ImpactFeedback.sharedInstance.prepare(style: .light)
+        }
         animate(sender, transform: CGAffineTransform.identity.scaledBy(x: 0.9, y: 0.9))
     }
     
     @objc private func animateUp(sender: UIButton) {
+        if #available(iOS 10.0, *) {
+            if ImpactFeedback.sharedInstance.style == UIImpactFeedbackStyle.light{
+                ImpactFeedback.sharedInstance.impact()
+                ImpactFeedback.sharedInstance.release()
+            }
+            else{
+                ImpactFeedback.sharedInstance.prepare(style: .light)
+                ImpactFeedback.sharedInstance.impact()
+                ImpactFeedback.sharedInstance.release()
+            }
+        }
         animate(sender, transform: .identity)
     }
     
