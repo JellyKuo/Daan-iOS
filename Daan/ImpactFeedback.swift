@@ -12,14 +12,14 @@ import UIKit
 @available(iOS 10.0, *)
 class ImpactFeedback{
     static let sharedInstance:ImpactFeedback = ImpactFeedback()
-    var style:UIImpactFeedbackStyle? = nil
+    var style:UIImpactFeedbackGenerator.FeedbackStyle? = nil
     var impactFeedbackGenerator : UIImpactFeedbackGenerator? = nil
     
     private init(){
         print("[Impact] Initialize sharedInstance")
     }
     
-    func prepare(style:UIImpactFeedbackStyle) {
+    func prepare(style:UIImpactFeedbackGenerator.FeedbackStyle) {
         if impactFeedbackGenerator == nil || self.style != style{
             impactFeedbackGenerator = UIImpactFeedbackGenerator(style: style)
             self.style = style

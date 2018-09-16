@@ -90,7 +90,7 @@ class NotificationTableViewController: UITableViewController {
             return
         }
         else if indexPath.section == 1{
-            let setVal = tableView.cellForRow(at: indexPath)?.accessoryType == UITableViewCellAccessoryType.none   // none -> true, checkmark -> false
+            let setVal = tableView.cellForRow(at: indexPath)?.accessoryType == UITableViewCell.AccessoryType.none   // none -> true, checkmark -> false
             switch indexPath.row{
             case 0:
                 chgTopic(setVal, topic: .General)

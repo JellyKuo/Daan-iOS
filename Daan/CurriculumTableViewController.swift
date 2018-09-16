@@ -28,7 +28,7 @@ class CurriculumTableViewController: UITableViewController {
         else{
             if let rect = self.navigationController?.navigationBar.frame {
                 let y = rect.size.height + rect.origin.y
-                self.tableView.contentInset = UIEdgeInsetsMake( y, 0, 0, 0)
+                self.tableView.contentInset = UIEdgeInsets.init( top: y, left: 0, bottom: 0, right: 0)
                 print("iOS 11 below is detected! TableView offset to \(y)")
             }
         }

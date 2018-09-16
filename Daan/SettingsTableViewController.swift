@@ -198,7 +198,7 @@ class SettingsTableViewController: UITableViewController,MFMailComposeViewContro
                     fatalError("Cannot get nav controller")
                 }
                 navC.popToRootViewController(animated: false)
-                if let mainVC = navC.childViewControllers[0] as? MainViewController{
+                if let mainVC = navC.children[0] as? MainViewController{
                     mainVC.autoLogin()
                 }
             }))
@@ -222,7 +222,7 @@ class SettingsTableViewController: UITableViewController,MFMailComposeViewContro
                 fatalError("Cannot get nav controller")
             }
             navC.popToRootViewController(animated: false)
-            if let mainVC = navC.childViewControllers[0] as? MainViewController{
+            if let mainVC = navC.children[0] as? MainViewController{
                 mainVC.autoLogin()
             }
         }))
@@ -239,7 +239,7 @@ class SettingsTableViewController: UITableViewController,MFMailComposeViewContro
             present(vc, animated: true)
         }
         else if #available(iOS 10.0, *) {
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            UIApplication.shared.open(url, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
         } else {
             UIApplication.shared.openURL(url)
         }
@@ -332,4 +332,9 @@ class SettingsTableViewController: UITableViewController,MFMailComposeViewContro
 
 protocol displayNameDelegate:class {
     func displaySwitched()
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
 }

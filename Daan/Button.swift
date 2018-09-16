@@ -65,7 +65,7 @@ extension UIButton{
     
     @objc private func animateUp(sender: UIButton) {
         if #available(iOS 10.0, *) {
-            if ImpactFeedback.sharedInstance.style == UIImpactFeedbackStyle.light{
+            if ImpactFeedback.sharedInstance.style == UIImpactFeedbackGenerator.FeedbackStyle.light{
                 ImpactFeedback.sharedInstance.impact()
                 ImpactFeedback.sharedInstance.release()
             }
