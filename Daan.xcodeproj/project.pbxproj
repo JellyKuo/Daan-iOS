@@ -59,6 +59,7 @@
 		A15CEFBA208222C800A101AD /* Notification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A15CEFB9208222C800A101AD /* Notification.storyboard */; };
 		A16BB1541FE16A0A00E7ABE4 /* UpdateUserDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16BB1531FE16A0A00E7ABE4 /* UpdateUserDataViewController.swift */; };
 		A1702CC81FEAB9D70064945A /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BD40071FD19BD200B5C079 /* UIColor.swift */; };
+		A172D622215766D6008E6789 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BD40071FD19BD200B5C079 /* UIColor.swift */; };
 		A17352B11FE625450065FB48 /* StudyRoom.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A17352B31FE625450065FB48 /* StudyRoom.storyboard */; };
 		A17DA6EF204A6E97005D039A /* NotificationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17DA6EE204A6E97005D039A /* NotificationTableViewController.swift */; };
 		A18564D52153F07A00F0CC14 /* NextClassIntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18564D42153F07A00F0CC14 /* NextClassIntentHandler.swift */; };
@@ -100,6 +101,9 @@
 		A1E904AE1FCEC7D9000E28AE /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E904AD1FCEC7D9000E28AE /* TextField.swift */; };
 		A1EE04D61FB7F21700021DAF /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EE04D51FB7F21700021DAF /* Token.swift */; };
 		A1EE04D81FB7F92B00021DAF /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EE04D71FB7F92B00021DAF /* ApiError.swift */; };
+		A1F445CD2157659600584DDD /* Curriculum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12F03B11FC08311004F739F /* Curriculum.swift */; };
+		A1F445CE2157659600584DDD /* Curriculum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12F03B11FC08311004F739F /* Curriculum.swift */; };
+		A1F445CF2157667900584DDD /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BD40071FD19BD200B5C079 /* UIColor.swift */; };
 		A1F8BE101FB3447400B26D86 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F8BE0F1FB3447400B26D86 /* LoginViewController.swift */; };
 		A1F8BE121FB3485C00B26D86 /* ApiConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1F8BE111FB3485C00B26D86 /* ApiConfig.plist */; };
 /* End PBXBuildFile section */
@@ -189,6 +193,8 @@
 		A15CEFB720820A4000A101AD /* Theme.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Theme.storyboard; sourceTree = "<group>"; };
 		A15CEFB9208222C800A101AD /* Notification.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Notification.storyboard; sourceTree = "<group>"; };
 		A16BB1531FE16A0A00E7ABE4 /* UpdateUserDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserDataViewController.swift; sourceTree = "<group>"; };
+		A172D623215769E6008E6789 /* Curriculum Intent.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Curriculum Intent.entitlements"; sourceTree = "<group>"; };
+		A172D624215769EA008E6789 /* Curriculum IntentUI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Curriculum IntentUI.entitlements"; sourceTree = "<group>"; };
 		A17DA6EE204A6E97005D039A /* NotificationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewController.swift; sourceTree = "<group>"; };
 		A18564D42153F07A00F0CC14 /* NextClassIntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextClassIntentHandler.swift; sourceTree = "<group>"; };
 		A18564D62153F92300F0CC14 /* SiriViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiriViewController.swift; sourceTree = "<group>"; };
@@ -441,6 +447,7 @@
 		A1B5425D2151465800578FFB /* Curriculum Intent */ = {
 			isa = PBXGroup;
 			children = (
+				A172D623215769E6008E6789 /* Curriculum Intent.entitlements */,
 				A1B5425E2151465800578FFB /* IntentHandler.swift */,
 				A1B542602151465800578FFB /* Info.plist */,
 				A18564D42153F07A00F0CC14 /* NextClassIntentHandler.swift */,
@@ -451,6 +458,7 @@
 		A1B542672151465800578FFB /* Curriculum IntentUI */ = {
 			isa = PBXGroup;
 			children = (
+				A172D624215769EA008E6789 /* Curriculum IntentUI.entitlements */,
 				A1B542682151465800578FFB /* IntentViewController.swift */,
 				A1B5426A2151465800578FFB /* MainInterface.storyboard */,
 				A1B5426D2151465800578FFB /* Info.plist */,
@@ -636,10 +644,20 @@
 					A1B5425B2151465800578FFB = {
 						CreatedOnToolsVersion = 10.0;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					A1B542642151465800578FFB = {
 						CreatedOnToolsVersion = 10.0;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -909,7 +927,9 @@
 			files = (
 				A1B5427E21514BC800578FFB /* Intents.intentdefinition in Sources */,
 				A18564D52153F07A00F0CC14 /* NextClassIntentHandler.swift in Sources */,
+				A1F445CD2157659600584DDD /* Curriculum.swift in Sources */,
 				A1B5425F2151465800578FFB /* IntentHandler.swift in Sources */,
+				A1F445CF2157667900584DDD /* UIColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -917,6 +937,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1F445CE2157659600584DDD /* Curriculum.swift in Sources */,
+				A172D622215766D6008E6789 /* UIColor.swift in Sources */,
 				A1B5427F21514BC800578FFB /* Intents.intentdefinition in Sources */,
 				A1B542692151465800578FFB /* IntentViewController.swift in Sources */,
 			);
@@ -1311,6 +1333,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_ENTITLEMENTS = "Curriculum Intent/Curriculum Intent.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2845NM46VS;
 				INFOPLIST_FILE = "Curriculum Intent/Info.plist";
@@ -1330,6 +1353,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_ENTITLEMENTS = "Curriculum Intent/Curriculum Intent.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2845NM46VS;
 				INFOPLIST_FILE = "Curriculum Intent/Info.plist";
@@ -1348,6 +1372,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_ENTITLEMENTS = "Curriculum IntentUI/Curriculum IntentUI.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2845NM46VS;
 				INFOPLIST_FILE = "Curriculum IntentUI/Info.plist";
@@ -1367,6 +1392,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_ENTITLEMENTS = "Curriculum IntentUI/Curriculum IntentUI.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2845NM46VS;
 				INFOPLIST_FILE = "Curriculum IntentUI/Info.plist";

@@ -13,23 +13,37 @@
         <scene sceneID="7MM-of-jgj">
             <objects>
                 <viewController id="ObA-dk-sSI" customClass="IntentViewController" customModule="Curriculum_IntentUI" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="zMn-AG-sqS">
+                    <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="jmd-3G-AY5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="EY7-cy-ZWb">
-                                <rect key="frame" x="150" y="65" width="20" height="20"/>
-                            </activityIndicatorView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="VUx-ML-y2t">
+                                <rect key="frame" x="10" y="36" width="300" height="104"/>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="naW-pq-BrU">
+                                <rect key="frame" x="5" y="5" width="310" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="EY7-cy-ZWb" firstAttribute="centerY" secondItem="zMn-AG-sqS" secondAttribute="centerY" id="6Yb-gC-16a"/>
-                            <constraint firstItem="EY7-cy-ZWb" firstAttribute="centerX" secondItem="zMn-AG-sqS" secondAttribute="centerX" id="krg-3a-FFB"/>
+                            <constraint firstItem="Onw-9Z-CgQ" firstAttribute="trailing" secondItem="naW-pq-BrU" secondAttribute="trailing" constant="5" id="CQG-BP-RdT"/>
+                            <constraint firstItem="Onw-9Z-CgQ" firstAttribute="bottom" secondItem="VUx-ML-y2t" secondAttribute="bottom" constant="10" id="HJC-rW-KAH"/>
+                            <constraint firstItem="naW-pq-BrU" firstAttribute="leading" secondItem="Onw-9Z-CgQ" secondAttribute="leading" constant="5" id="NSU-pw-5CH"/>
+                            <constraint firstItem="VUx-ML-y2t" firstAttribute="top" secondItem="naW-pq-BrU" secondAttribute="bottom" constant="10" id="P8M-Dl-Qjm"/>
+                            <constraint firstItem="naW-pq-BrU" firstAttribute="top" secondItem="jmd-3G-AY5" secondAttribute="top" constant="5" id="ZAa-n9-cnX"/>
+                            <constraint firstItem="VUx-ML-y2t" firstAttribute="leading" secondItem="Onw-9Z-CgQ" secondAttribute="leading" constant="10" id="kWY-Qi-0sb"/>
+                            <constraint firstItem="Onw-9Z-CgQ" firstAttribute="trailing" secondItem="VUx-ML-y2t" secondAttribute="trailing" constant="10" id="vcL-gj-0Gm"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="4PN-XC-lEE"/>
+                        <viewLayoutGuide key="safeArea" id="Onw-9Z-CgQ"/>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="150"/>
+                    <connections>
+                        <outlet property="descLabel" destination="naW-pq-BrU" id="kWq-WR-zpX"/>
+                        <outlet property="stackView" destination="VUx-ML-y2t" id="XFp-pJ-4Mt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X47-rx-isc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
