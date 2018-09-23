@@ -552,8 +552,8 @@
 				A11DC6DF1FB33C3B00A4EC9A /* Resources */,
 				1F3FA917DD276C7882CA3740 /* [CP] Embed Pods Frameworks */,
 				A19494621FEA927B006EF100 /* Embed App Extensions */,
-				A1C22D2D204D8244004F12AD /* Run Script: Fabric */,
 				A1BFDEF42151410500B4CA0A /* Run Script: Increment build number */,
+				A1C22D2D204D8244004F12AD /* Run Script: Fabric */,
 			);
 			buildRules = (
 			);
@@ -796,7 +796,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/Today Curriculum/Info.plist\"\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/Curriculum Intent/Info.plist\"\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/Curriculum IntentUI/Info.plist\"\n";
+			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/Today Curriculum/Info.plist\"\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/Curriculum Intent/Info.plist\"\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/Curriculum IntentUI/Info.plist\"\n\nshortVersion=$(/usr/libexec/PlistBuddy -c \"Print CFBundleShortVersionString\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\n/usr/libexec/PlistBuddy -c \"Set :CFBundleShortVersionString $shortVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n/usr/libexec/PlistBuddy -c \"Set :CFBundleShortVersionString $shortVersion\" \"${PROJECT_DIR}/Today Curriculum/Info.plist\"\n/usr/libexec/PlistBuddy -c \"Set :CFBundleShortVersionString $shortVersion\" \"${PROJECT_DIR}/Curriculum Intent/Info.plist\"\n/usr/libexec/PlistBuddy -c \"Set :CFBundleShortVersionString $shortVersion\" \"${PROJECT_DIR}/Curriculum IntentUI/Info.plist\"\n";
 		};
 		A1C22D2D204D8244004F12AD /* Run Script: Fabric */ = {
 			isa = PBXShellScriptBuildPhase;
