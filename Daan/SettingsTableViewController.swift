@@ -11,6 +11,7 @@ import MessageUI
 import SafariServices
 import FirebaseMessaging  //Remove on production
 import Crashlytics  //Remove on production
+import Intents //DEV\
 
 class SettingsTableViewController: UITableViewController,MFMailComposeViewControllerDelegate, SFSafariViewControllerDelegate {
     
@@ -90,6 +91,18 @@ class SettingsTableViewController: UITableViewController,MFMailComposeViewContro
                 break;
             case 8:
                 openUrl("itms-apps://itunes.apple.com/app/id1316911750", useSFShow: false)
+            case 9:
+                if #available(iOS 12.0, *) {
+                    donateNextClassIntent()
+                } else {
+                    print("Not supported device")
+                }
+            case 11:
+                if #available(iOS 12.0, *) {
+                    deleteAllDonations()
+                } else {
+                    print("Not supported device")
+                }
             default:
                 break;
             }
@@ -247,6 +260,30 @@ class SettingsTableViewController: UITableViewController,MFMailComposeViewContro
     
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         controller.dismiss(animated: true, completion: nil)
+    }
+    
+    @available(iOS 12.0, *)
+    func donateNextClassIntent(){
+        let intent = NextClassIntent()
+        intent.suggestedInvocationPhrase = "Next class"
+        let interaction = INInteraction(intent: intent, response: nil)
+        interaction.donate { (error) in
+            if let error = error as NSError?{
+                print("[Intent] Donation failed with error \(error)")
+            }else{
+                print("[Intent] Donation successful")
+            }
+        }
+    }
+    
+    @available(iOS 12.0, *)
+    func deleteAllDonations() {
+        INInteraction.deleteAll { (error) in
+            if let error = error as NSError?{
+                print("[INInteraction] Delete all error \(error)")
+            }
+            print("[INInteraction] Delete all")
+        }
     }
     
     // MARK: - Table view data source
