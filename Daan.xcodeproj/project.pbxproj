@@ -545,8 +545,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A11DC6F31FB33C3C00A4EC9A /* Build configuration list for PBXNativeTarget "Daan" */;
 			buildPhases = (
-				A10204A1210458D9008C4502 /* Run Script: Tag FIXME and ERROR */,
 				A1ED1ABB20F7FA9C220B209A /* [CP] Check Pods Manifest.lock */,
+				A10204A1210458D9008C4502 /* Run Script: Tag FIXME and ERROR */,
 				A11DC6DD1FB33C3B00A4EC9A /* Sources */,
 				A11DC6DE1FB33C3B00A4EC9A /* Frameworks */,
 				A11DC6DF1FB33C3B00A4EC9A /* Resources */,
@@ -1294,7 +1294,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 828118FBE6EC8C2E022567D4 /* Pods-Daan.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Daan/Daan.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -1314,7 +1314,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 97090D5A146DDF06092C73C8 /* Pods-Daan.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Daan/Daan.entitlements;
 				CODE_SIGN_STYLE = Automatic;
