@@ -12,7 +12,7 @@ class CurriculumPageViewController: UIPageViewController, UIPageViewControllerDa
     var token:Token? = nil
     var curriculumWeek:CurriculumWeek? = nil
     var tableVCs:[CurriculumTableViewController]? = nil
-    var activityInd:UIActivityIndicatorView!
+    //var activityInd:UIActivityIndicatorView!
     
     @IBOutlet weak var weekNavItem: UINavigationItem!
     
@@ -20,11 +20,13 @@ class CurriculumPageViewController: UIPageViewController, UIPageViewControllerDa
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
         
+        /*
         activityInd = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
         activityInd.color = UIColor.gray
         let barButton = UIBarButtonItem(customView: activityInd)
         navigationItem.rightBarButtonItem = barButton
         activityInd.startAnimating()
+        */
         
         GetData()
         
@@ -37,6 +39,18 @@ class CurriculumPageViewController: UIPageViewController, UIPageViewControllerDa
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func btnCopy_Tap(_ sender: Any) {
+        guard let userDefaults = UserDefaults.init(suiteName: "group.com.Jelly.Daan") else{
+            fatalError("Cannot init new UserDefaults with suiteName")
+        }
+        if let JSON = userDefaults.string(forKey: "curriculumJSON"){
+            UIPasteboard.general.string = JSON
+            let alert = UIAlertController(title: "Copied", message: "JSON copied successfully", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK_ACT", comment:"Ok action on tap"), style: .`default`, handler: nil))
+            self.present(alert,animated: true,completion: nil)
+        }
     }
     
     func GetData() {
@@ -148,7 +162,7 @@ class CurriculumPageViewController: UIPageViewController, UIPageViewControllerDa
         SetNavTitle(week: index)
         setViewControllers([tableVCs![index]], direction: .forward, animated: false, completion: nil)
         
-        activityInd.stopAnimating()
+        //activityInd.stopAnimating()
     }
     
     func SetNavTitle(week:Int){

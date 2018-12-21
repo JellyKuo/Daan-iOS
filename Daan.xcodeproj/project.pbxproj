@@ -46,6 +46,7 @@
 		A12FFC0A20464C5A004ABD9B /* Legal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A12FFC0C20464C5A004ABD9B /* Legal.storyboard */; };
 		A12FFC1020464E24004ABD9B /* Legal.plist in Resources */ = {isa = PBXBuildFile; fileRef = A12FFC0F20464E24004ABD9B /* Legal.plist */; };
 		A12FFC1220464F48004ABD9B /* LegalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12FFC1120464F48004ABD9B /* LegalViewController.swift */; };
+		A1369CC621CD51BC005275A1 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1369CC521CD51BC005275A1 /* WelcomeViewController.swift */; };
 		A14A0FA121074EAA00EFCACA /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A14A0FA021074EAA00EFCACA /* Calendar.storyboard */; };
 		A14A0FA521074FCE00EFCACA /* CalendarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14A0FA421074FCE00EFCACA /* CalendarTableViewController.swift */; };
 		A14A0FA72107512500EFCACA /* CalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14A0FA62107512500EFCACA /* CalendarTableViewCell.swift */; };
@@ -182,6 +183,7 @@
 		A12FFC0820464C4D004ABD9B /* LegalTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalTableViewController.swift; sourceTree = "<group>"; };
 		A12FFC0F20464E24004ABD9B /* Legal.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Legal.plist; sourceTree = "<group>"; };
 		A12FFC1120464F48004ABD9B /* LegalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalViewController.swift; sourceTree = "<group>"; };
+		A1369CC521CD51BC005275A1 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		A14A0FA021074EAA00EFCACA /* Calendar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
 		A14A0FA421074FCE00EFCACA /* CalendarTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTableViewController.swift; sourceTree = "<group>"; };
 		A14A0FA62107512500EFCACA /* CalendarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTableViewCell.swift; sourceTree = "<group>"; };
@@ -405,6 +407,7 @@
 				A1F8BE0F1FB3447400B26D86 /* LoginViewController.swift */,
 				A1B0716C1FB84BDB006A291A /* SignUpViewController.swift */,
 				A1930A881FCEDFF1008344CA /* Welcome.storyboard */,
+				A1369CC521CD51BC005275A1 /* WelcomeViewController.swift */,
 			);
 			name = Welcome;
 			sourceTree = "<group>";
@@ -610,6 +613,7 @@
 				KnownAssetTags = (
 					0,
 					1,
+					OopsScreen,
 				);
 				LastSwiftUpdateCheck = 1000;
 				LastUpgradeCheck = 0930;
@@ -892,6 +896,7 @@
 				A1B0716F1FB850B6006A291A /* Register.swift in Sources */,
 				A1B0716D1FB84BDB006A291A /* SignUpViewController.swift in Sources */,
 				A12F03B41FC0867D004F739F /* CurriculumTableViewController.swift in Sources */,
+				A1369CC621CD51BC005275A1 /* WelcomeViewController.swift in Sources */,
 				A14A0FA521074FCE00EFCACA /* CalendarTableViewController.swift in Sources */,
 				A105F7E71FE3F2C100777DC6 /* StudyRoomViewController.swift in Sources */,
 				A1D2018D1FDC246300FABA4D /* SettingsTableViewController.swift in Sources */,
@@ -1154,6 +1159,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
@@ -1174,6 +1180,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};
@@ -1307,6 +1314,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
@@ -1326,6 +1334,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};
@@ -1346,6 +1355,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
@@ -1365,6 +1375,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};
@@ -1385,6 +1396,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
@@ -1404,6 +1416,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};
